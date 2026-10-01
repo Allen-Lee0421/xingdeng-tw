@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>光耀星樞 SNT | AI 雲端辦公室建置 — 讓 AI 處理重複工作，讓團隊專注創造價值</title>
+    
+    <!-- SEO Meta -->
+    <meta name="description" content="光耀星樞（SNT）協助企業建立 AI 雲端辦公室。提供 AI 助理、網站建置、工作流程自動化、知識管理等服务。六大 AI 數位員工 24 小時自動運行，減少重複工作、提升團隊效率。">
+    <meta name="keywords" content="AI雲端辦公室,光耀星樞,SNT,AI助理,網站建置,工作流程自動化,知識管理,AI數位員工,企業AI導入,B2B AI自動化">
+    <meta name="author" content="Singularity Nexus Technology">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://xingdeng.tw/">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://xingdeng.tw/">
+    <meta property="og:title" content="光耀星樞 SNT | AI 雲端辦公室建置">
+    <meta property="og:description" content="讓 AI 幫你處理重複工作，讓團隊把時間留給真正重要的事。六大 AI 數位員工 24H 自動運行。">
+    <meta property="og:image" content="https://xingdeng.tw/og-image.png">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:site_name" content="光耀星樞 SNT">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="光耀星樞 SNT | AI 雲端辦公室建置">
+    <meta name="twitter:description" content="讓 AI 幫你處理重複工作，讓團隊把時間留給真正重要的事。">
+    <meta name="twitter:image" content="https://xingdeng.tw/og-image.png">
+    
+    <!-- JSON-LD Structured Data: Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "光耀星樞 Singularity Nexus Technology",
+      "alternateName": "SNT",
+      "url": "https://xingdeng.tw",
+      "description": "協助企業建立 AI 雲端辦公室，提供 AI 助理、網站建置、工作流程自動化與知識管理服務。",
+      "email": "service@xingdeng.tw",
+      "foundingDate": "2026",
+      "address": { "@type": "PostalAddress", "addressCountry": "TW" },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "SNT AI 服務方案",
+        "itemListElement": [
+          { "@type": "Offer", "name": "Starter 方案", "description": "適合小型團隊的 AI 入門方案" },
+          { "@type": "Offer", "name": "Pro 方案", "description": "完整 AI 雲端辦公室建置" },
+          { "@type": "Offer", "name": "Enterprise 方案", "description": "企業級 AI 自動化解決方案" }
+        ]
+      }
+    }
+    </script>
+    <!-- JSON-LD Structured Data: WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "光耀星樞 SNT",
+      "url": "https://xingdeng.tw",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://xingdeng.tw/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        snt: {
+                            50: '#f0fdfa', 100: '#ccfbf1', 400: '#2dd4bf', 500: '#14b8a6',
+                            600: '#0d9488', 800: '#115e59', 900: '#134e4a',
+                            gold: '#fbbf24', cyan: '#06b6d4', purple: '#a855f7',
+                        },
+                        cyberDark: '#070a12', cyberPanel: '#0f172a', cyberCard: '#1e293b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans TC', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', 'Noto Sans TC', sans-serif; }
+        .cyber-grid {
+            background-size: 30px 30px;
+            background-image: 
+                linear-gradient(to right, rgba(14, 165, 233, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(14, 165, 233, 0.05) 1px, transparent 1px);
+        }
+        .hud-border {
+            position: relative;
+            border: 1px solid rgba(6, 182, 212, 0.3);
+        }
+        .hud-border::before {
+            content: ''; position: absolute; top: -2px; left: -2px; width: 8px; height: 8px;
+            border-top: 2px solid #06b6d4; border-left: 2px solid #06b6d4;
+        }
+        .hud-border::after {
+            content: ''; position: absolute; bottom: -2px; right: -2px; width: 8px; height: 8px;
+            border-bottom: 2px solid #06b6d4; border-right: 2px solid #06b6d4;
+        }
+        .filter-matrix { filter: sepia(100%) hue-rotate(90deg) saturate(300%) contrast(120%); }
+        .filter-thermal { filter: opacity(0.9) invert(20%) saturate(500%) hue-rotate(240deg) contrast(150%); }
+        .filter-cyan { filter: drop-shadow(0 0 10px rgba(6, 182, 212, 0.6)); }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #070a12; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #0d9488; }
+        @media print {
+            .no-print { display: none !important; }
+            .print-only { display: block !important; }
+            body { background: white !important; color: black !important; font-size: 11pt; }
+            .page-break { page-break-before: always; }
+            .paper-shadow { box-shadow: none !important; border: 1px solid #ccc !important; }
+            .cyber-card-print { background: white !important; color: black !important; border: 1px solid #ddd !important; }
+        }
+    </style>
+</head>
+<body class="bg-cyberDark text-slate-100 min-h-screen flex flex-col antialiased selection:bg-snt-500 selection:text-white">
+
+    <!-- HEADER -->
+    <header class="no-print border-b border-slate-800 bg-slate-950/90 backdrop-blur sticky top-0 z-50 px-4 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-snt-600 via-cyan-500 to-amber-400 p-0.5 flex items-center justify-center shadow-lg shadow-snt-500/20">
+                <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center font-black text-amber-400 font-mono text-lg">SNT</div>
+            </div>
+            <div>
+                <div class="flex items-center gap-2">
+                    <h1 class="font-bold text-base md:text-lg text-white leading-tight">光曜星樞 (Singularity Nexus Technology)</h1>
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-snt-500/20 text-snt-400 border border-snt-500/30">A1 企劃版</span>
+                </div>
+                <p class="text-xs text-slate-400 font-mono">文件編號：SNT-PROPOSAL-2026-A1 | 發布日期：2026 年 9 月</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-2 flex-wrap text-xs">
+            <button onclick="switchView('doc')" id="btn-view-doc" class="px-3.5 py-2 rounded-lg bg-snt-600 text-white font-medium flex items-center gap-2 transition hover:bg-snt-500">
+                <i class="fa-solid fa-file-contract"></i> 企劃書全文
+            </button>
+            <button onclick="switchView('lab')" id="btn-view-lab" class="px-3.5 py-2 rounded-lg bg-slate-800 text-slate-300 font-medium flex items-center gap-2 transition hover:bg-slate-700">
+                <i class="fa-solid fa-flask-vial text-cyan-400"></i> 8K 藝廊/Lab (/lab)
+            </button>
+            <button onclick="switchView('tools')" id="btn-view-tools" class="px-3.5 py-2 rounded-lg bg-slate-800 text-slate-300 font-medium flex items-center gap-2 transition hover:bg-slate-700">
+                <i class="fa-solid fa-calculator text-amber-400"></i> ROI 與 GEO 工具
+            </button>
+            <div class="h-5 w-[1px] bg-slate-800 mx-1"></div>
+            <a href="/pricing.html" class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-2 rounded-lg border border-slate-700 transition flex items-center gap-1.5">
+                <i class="fa-solid fa-tag text-gold"></i> 定價
+            </a>
+            <a href="/services.html" class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-2 rounded-lg border border-slate-700 transition flex items-center gap-1.5">
+                <i class="fa-solid fa-briefcase text-purple-400"></i> 服務
+            </a>
+            <a href="/exhibition.html" class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-2 rounded-lg border border-slate-700 transition flex items-center gap-1.5">
+                <i class="fa-solid fa-flask-vial text-cyan-400"></i> 藝廊
+            </a>
+            <div class="h-5 w-[1px] bg-slate-800 mx-1"></div>
+            <button onclick="exportMarkdown()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-2 rounded-lg border border-slate-700 transition flex items-center gap-1.5">
+                <i class="fa-solid fa-download text-snt-400"></i> 匯出 MD
+            </button>
+            <button onclick="window.print()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-2 rounded-lg border border-slate-700 transition flex items-center gap-1.5">
+                <i class="fa-solid fa-print text-cyan-400"></i> 列印 / 轉 PDF
+            </button>
+        </div>
+    </header>
+
+    <!-- SUB HEADER -->
+    <div class="no-print bg-slate-900/60 border-b border-slate-800/80 px-4 lg:px-8 py-2 text-xs">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
+            <div class="flex items-center gap-6 flex-wrap text-slate-300">
+                <span><i class="fa-solid fa-building-user text-snt-400 mr-1"></i> 負責單位：總管理處</span>
+                <span><i class="fa-solid fa-globe text-cyan-400 mr-1"></i> 網域：<code class="text-amber-300 font-mono">xingdeng.tw</code></span>
+                <span><i class="fa-solid fa-server text-purple-400 mr-1"></i> 部署：<code class="text-snt-300 font-mono">Vercel Orbit Studio</code></span>
+            </div>
+            <div class="flex items-center gap-2 text-[11px] font-mono text-emerald-400 bg-emerald-950/60 px-2.5 py-0.5 rounded border border-emerald-800/50">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> SNT-SYSTEM-ACTIVE: 100%
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN -->
+    <main class="flex-1 max-w-7xl w-full mx-auto p-4 lg:p-8 flex flex-col gap-8">
+
+        <!-- VIEW 1: DOCUMENT -->
+        <div id="view-doc" class="space-y-10">
+            <!-- COVER -->
+            <div class="bg-gradient-to-br from-cyberPanel via-slate-900 to-slate-950 p-8 md:p-12 rounded-3xl border border-slate-800 shadow-2xl relative overflow-hidden hud-border">
+                <div class="absolute -right-20 -top-20 w-80 h-80 bg-snt-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="max-w-3xl space-y-4 relative z-10">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-snt-500/10 border border-snt-500/30 text-snt-400 text-xs font-mono">
+                        <i class="fa-solid fa-shield-halved"></i> 企業級 B2B AI 自動化與爛尾樓救援專案
+                    </div>
+                    <h1 class="text-3xl md:text-5xl font-black text-white leading-tight tracking-tight">
+                        光曜星樞 (SNT)<br>
+                        <span class="bg-gradient-to-r from-snt-400 via-cyan-400 to-amber-300 bg-clip-text text-transparent">雲端辦公室建置暨專案推進企劃書</span>
+                    </h1>
+                    <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+                        結合 Build in Public 公開建構策略、工程物理防護邏輯、6 大 AI 數位員工代理人矩陣與 SNT Nexus SDK 嵌入式閉環，打造全天候自動運行的 AI 企業總部。底層引擎混合調度 Gemini / Copilot / Groq / Meta / Manus / MuleRun 六大平台。
+                    </p>
+                    <div class="pt-4 grid grid-cols-2 md:grid-cols-4 gap-3 text-xs font-mono">
+                        <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800">
+                            <span class="text-slate-500 block">文件編號</span>
+                            <span class="text-snt-300 font-bold">SNT-PROPOSAL-2026-A1</span>
+                        </div>
+                        <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800">
+                            <span class="text-slate-500 block">版本狀態</span>
+                            <span class="text-amber-400 font-bold">A1 初版草案</span>
+                        </div>
+                        <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800">
+                            <span class="text-slate-500 block">發布日期</span>
+                            <span class="text-slate-200">2026 年 9 月</span>
+                        </div>
+                        <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800">
+                            <span class="text-slate-500 block">負責單位</span>
+                            <span class="text-cyan-300">SNT 總管理處</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PLACEHOLDER: sections will be filled via Edit -->
+            <!-- 壹、 專案總覽 -->
+            <section class="bg-cyberPanel p-6 md:p-8 rounded-2xl border border-slate-800 shadow-xl space-y-6">
+                <div class="flex items-center gap-3 border-b border-slate-800 pb-4">
+                    <div class="w-8 h-8 rounded-lg bg-snt-500/20 text-snt-400 flex items-center justify-center font-bold font-mono">壹</div>
+                    <h2 class="text-xl font-bold text-white">專案總覽 (Executive Summary)</h2>
+                </div>
+                <div class="space-y-4 text-sm text-slate-300 leading-relaxed">
+                    <h3 class="text-base font-bold text-snt-400 flex items-center gap-2"><i class="fa-solid fa-bullseye"></i> 一、 專案背景與宗旨</h3>
+                    <p>「光曜星樞 (Singularity Nexus Technology, SNT)」旨在提供企業級 B2B AI 自動化解決方案、系統維運與「爛尾樓救援」服務。本專案透過 Build in Public（公開建構）策略，將實體工程管理的風險控制與解構邏輯導入軟體系統，透過記錄修復 abandoned/爛尾專案的真實過程作為核心行銷素材，並打造全天候自動化運行的「SNT 雲端辦公室」。</p>
+
+                    <h3 class="text-base font-bold text-snt-400 flex items-center gap-2 pt-2"><i class="fa-solid fa-cubes"></i> 二、 三大核心目標</h3>
+                    <div class="grid md:grid-cols-3 gap-4 font-normal">
+                        <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800 space-y-2">
+                            <div class="text-snt-400 font-bold flex items-center gap-2"><i class="fa-solid fa-shield-check"></i> 1. 品牌定錨與合規</div>
+                            <p class="text-xs text-slate-400">完成 SNT 官網全面煥新，建立多語系識別與嚴格的法律免責防護屏障 (privacy.html)。</p>
+                        </div>
+                        <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800 space-y-2">
+                            <div class="text-cyan-400 font-bold flex items-center gap-2"><i class="fa-solid fa-video"></i> 2. Build in Public 行銷</div>
+                            <p class="text-xs text-slate-400">錄製並剪輯「Vercel 爛尾樓救援」系列實錄，建立權威專業形象與獲客閉環。</p>
+                        </div>
+                        <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800 space-y-2">
+                            <div class="text-amber-400 font-bold flex items-center gap-2"><i class="fa-solid fa-network-wired"></i> 3. 雲端辦公室與 SDK</div>
+                            <p class="text-xs text-slate-400">建立 5 大職能部門、6 位 AI 數位員工的分工體系，並透過 SDK 實現客戶端一鍵連通。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-4">
+                    <h3 class="text-sm font-bold text-slate-200 mb-3 flex items-center gap-2"><i class="fa-solid fa-right-left text-amber-400"></i> 方案優勢對比表 (轉換率 +40% 關鍵)</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-900 border-b border-slate-800 text-slate-400 font-mono">
+                                    <th class="p-3">評比項目</th>
+                                    <th class="p-3 text-rose-400">傳統套裝/外包網站</th>
+                                    <th class="p-3 text-snt-400 bg-snt-950/40 border-x border-snt-500/30">SNT Orbit AI 自動化雲端總部</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-800 text-slate-300">
+                                <tr>
+                                    <td class="p-3 font-medium">訪客留單機制</td>
+                                    <td class="p-3 text-slate-400">被動填表、容易漏單、無即時對答</td>
+                                    <td class="p-3 font-bold text-snt-300 bg-snt-950/20 border-x border-snt-500/20">GEO 檢測 + ROI 計算器主動留單 (留存率翻 3 倍)</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-medium">維運與報修</td>
+                                    <td class="p-3 text-slate-400">Email 往返溝通慢、常變成「爛尾樓」</td>
+                                    <td class="p-3 font-bold text-snt-300 bg-snt-950/20 border-x border-snt-500/20">SNT Nexus SDK 腳本一鍵通報 (帶 Console Error Log)</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-medium">客服響應速度</td>
+                                    <td class="p-3 text-slate-400">人工回覆需 1-2 天，錯失潛在商機</td>
+                                    <td class="p-3 font-bold text-snt-300 bg-snt-950/20 border-x border-snt-500/20">AI-00 星樞總調度官 30 秒內自動研判預答覆與派工</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-medium">信任感呈現</td>
+                                    <td class="p-3 text-slate-400">靜態圖片、文字吹噓、客戶無感</td>
+                                    <td class="p-3 font-bold text-snt-300 bg-snt-950/20 border-x border-snt-500/20">實時 Live 戰情室數據 + 8K 藝廊微型機器人沙盒</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <!-- 貳、 品牌識別與 VI 規範 -->
+            <section class="bg-cyberPanel p-6 md:p-8 rounded-2xl border border-slate-800 shadow-xl space-y-6">
+                <div class="flex items-center gap-3 border-b border-slate-800 pb-4">
+                    <div class="w-8 h-8 rounded-lg bg-snt-500/20 text-snt-400 flex items-center justify-center font-bold font-mono">貳</div>
+                    <h2 class="text-xl font-bold text-white">品牌識別與 VI 規範 (Brand Identity & VI Specifications)</h2>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs border-collapse">
+                        <thead>
+                            <tr class="bg-slate-900 border-b border-slate-800 text-slate-400 font-mono">
+                                <th class="p-3">項目</th><th class="p-3">規範標準</th><th class="p-3">應用情境與說明</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800 text-slate-300">
+                            <tr><td class="p-3 font-bold text-snt-400">中文全稱</td><td class="p-3 font-semibold text-white">光曜星樞</td><td class="p-3 text-slate-400">華語市場、公司登記、網站主標題</td></tr>
+                            <tr><td class="p-3 font-bold text-snt-400">英文全稱</td><td class="p-3 font-semibold text-white">Singularity Nexus Technology</td><td class="p-3 text-slate-400">國際市場、官網英文版、法律條款</td></tr>
+                            <tr><td class="p-3 font-bold text-snt-400">日文全稱</td><td class="p-3 font-semibold text-white">シンギュラリティ・ネクサス・テクノロジー株式会社</td><td class="p-3 text-slate-400">日本市場、日文版頁尾與跨國對接</td></tr>
+                            <tr><td class="p-3 font-bold text-snt-400">品牌簡稱與 Icon</td><td class="p-3 font-mono text-amber-400">SNT</td><td class="p-3 text-slate-400">代碼命名、API Prefix、系統識別 Icon</td></tr>
+                            <tr>
+                                <td class="p-3 font-bold text-snt-400">品牌調色盤背板</td>
+                                <td class="p-3"><div class="flex gap-1.5"><span class="w-5 h-5 rounded bg-white border border-slate-400"></span><span class="w-5 h-5 rounded bg-blue-500"></span><span class="w-5 h-5 rounded bg-rose-500"></span><span class="w-5 h-5 rounded bg-amber-400"></span><span class="w-5 h-5 rounded bg-emerald-500"></span><span class="w-5 h-5 rounded bg-purple-500"></span></div></td>
+                                <td class="p-3 text-slate-400">背板亮白底 / 藍 / 紅 / 黃 / 綠 / 紫，可調控變換</td>
+                            </tr>
+                            <tr><td class="p-3 font-bold text-snt-400">法律免責聲明</td><td class="p-3 font-mono text-rose-400">privacy.html 條款</td><td class="p-3 text-slate-400">包含國家安全、第三方權益侵害及刑事責任免責，作為企業法律防火牆</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pt-2 space-y-3">
+                    <h3 class="text-sm font-bold text-slate-200 flex items-center gap-2"><i class="fa-solid fa-credit-card text-emerald-400"></i> 三大金流收款通道與匯率對齊機制</h3>
+                    <div class="grid md:grid-cols-3 gap-3 text-xs font-mono">
+                        <div class="bg-slate-900 p-3.5 rounded-xl border border-slate-800 space-y-1">
+                            <span class="text-blue-400 font-bold block">• 通道 A (國內大額)</span>
+                            <span class="text-slate-200 block font-semibold">樂天國際銀行 (Rakuten)</span>
+                            <span class="text-slate-500 text-[10px]">適用台灣境內企業台幣轉帳</span>
+                        </div>
+                        <div class="bg-slate-900 p-3.5 rounded-xl border border-slate-800 space-y-1">
+                            <span class="text-amber-400 font-bold block">• 通道 B (海外電匯)</span>
+                            <span class="text-slate-200 block font-semibold">台灣銀行松山分行</span>
+                            <span class="text-slate-500 text-[10px]">適用國際 Swift 電匯匯款</span>
+                        </div>
+                        <div class="bg-slate-900 p-3.5 rounded-xl border border-slate-800 space-y-1">
+                            <span class="text-purple-400 font-bold block">• 通道 C (跨境美金)</span>
+                            <span class="text-slate-200 block font-semibold">Payoneer 跨境電匯</span>
+                            <span class="text-slate-500 text-[10px] truncate block">USD Link Token: D03837B...</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 參、 雲端辦公室：部門架構與 6 大 AI 代理人矩陣 -->
+            <section class="bg-cyberPanel p-6 md:p-8 rounded-2xl border border-slate-800 shadow-xl space-y-6">
+                <div class="flex items-center gap-3 border-b border-slate-800 pb-4">
+                    <div class="w-8 h-8 rounded-lg bg-snt-500/20 text-snt-400 flex items-center justify-center font-bold font-mono">參</div>
+                    <h2 class="text-xl font-bold text-white">雲端辦公室：5 大部門與 6 大 AI 代理人矩陣</h2>
+                </div>
+
+                <!-- 6 AI Platforms Infrastructure Banner -->
+                <div class="bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 p-5 rounded-xl border border-cyan-500/20 space-y-4">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-microchip text-cyan-400"></i>
+                        <h3 class="text-sm font-bold text-white">底層 AI 引擎：六大平台混合調度架構 (Mixed-Dispatch AI Infrastructure)</h3>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        SNT 雲端辦公室不綁定單一 AI 供應商。所有 6 位 AI 數位員工均可依任務特性（速度、成本、推理深度、多模態需求）自動路由至最佳平台，實現冗援備援與效能極大化。
+                    </p>
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 text-center text-[11px] font-mono">
+                        <div class="bg-slate-900 p-3 rounded-lg border border-blue-500/30 space-y-1">
+                            <div class="text-blue-400 font-bold text-sm">Gemini</div>
+                            <div class="text-slate-500">Google DeepMind</div>
+                            <div class="text-slate-400 text-[10px]">多模態推理 / 長文本</div>
+                        </div>
+                        <div class="bg-slate-900 p-3 rounded-lg border border-emerald-500/30 space-y-1">
+                            <div class="text-emerald-400 font-bold text-sm">Copilot</div>
+                            <div class="text-slate-500">Microsoft</div>
+                            <div class="text-slate-400 text-[10px]">程式碼生成 / 文件協作</div>
+                        </div>
+                        <div class="bg-slate-900 p-3 rounded-lg border border-amber-500/30 space-y-1">
+                            <div class="text-amber-400 font-bold text-sm">Groq</div>
+                            <div class="text-slate-500">Groq Inc.</div>
+                            <div class="text-slate-400 text-[10px]">超低延遲推論 / 即時回應</div>
+                        </div>
+                        <div class="bg-slate-900 p-3 rounded-lg border border-purple-500/30 space-y-1">
+                            <div class="text-purple-400 font-bold text-sm">Meta</div>
+                            <div class="text-slate-500">Llama / FAIR</div>
+                            <div class="text-slate-400 text-[10px]">開源模型 / 自託管部署</div>
+                        </div>
+                        <div class="bg-slate-900 p-3 rounded-lg border border-rose-500/30 space-y-1">
+                            <div class="text-rose-400 font-bold text-sm">Manus</div>
+                            <div class="text-slate-500">Manus AI</div>
+                            <div class="text-slate-400 text-[10px]">自主任務執行 / Agent 編排</div>
+                        </div>
+                        <div class="bg-slate-900 p-3 rounded-lg border border-snt-500/30 space-y-1">
+                            <div class="text-snt-400 font-bold text-sm">MuleRun</div>
+                            <div class="text-slate-500">MuleRun</div>
+                            <div class="text-slate-400 text-[10px]">多工具整合 / 技能編排</div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-950/80 p-3 rounded-lg border border-slate-800 text-[11px] text-slate-400 font-mono">
+                        <span class="text-cyan-400">ROUTING_LOGIC:</span> 意圖識別 → 任務分類 → 平台評分 (latency × cost × accuracy) → 自動派發 → 結果彙總回傳
+                    </div>
+                </div>
+
+                <!-- Workflow diagram -->
+                <div class="bg-slate-950 p-6 rounded-xl border border-slate-800 font-mono text-xs space-y-4 overflow-x-auto">
+                    <div class="text-center text-snt-400 font-bold">【全渠道客戶反饋 / SDK 一鍵呼叫】</div>
+                    <div class="text-center text-slate-600">│</div>
+                    <div class="text-center">
+                        <span class="bg-snt-600/30 text-snt-300 px-4 py-2 rounded-lg border border-snt-500/50 font-bold inline-block">
+                            【0. 總控派工部：AI-00 星樞總調度官 (Nexus Dispatcher)】<br>
+                            <span class="text-[10px] font-normal text-slate-300">(30 秒內完成研判、安撫預答覆與工單路由 — 由 Groq 超低延遲驅動)</span>
+                        </span>
+                    </div>
+                    <div class="text-center text-slate-600">│</div>
+                    <div class="grid grid-cols-5 gap-2 text-center min-w-[650px]">
+                        <div class="bg-slate-900 p-2.5 rounded border border-blue-500/30 text-blue-300">
+                            <strong>【1. 業務營銷】</strong><br>AI-01 業務諮詢<br><span class="text-[10px] text-slate-400">(Gemini 多模態)</span>
+                        </div>
+                        <div class="bg-slate-900 p-2.5 rounded border border-purple-500/30 text-purple-300">
+                            <strong>【2. 技術維運】</strong><br>AI-03 系統維運<br><span class="text-[10px] text-slate-400">(Copilot + Meta)</span>
+                        </div>
+                        <div class="bg-slate-900 p-2.5 rounded border border-emerald-500/30 text-emerald-300">
+                            <strong>【3. 客服交付】</strong><br>AI-04 交付專員<br><span class="text-[10px] text-slate-400">(MuleRun 編排)</span>
+                        </div>
+                        <div class="bg-slate-900 p-2.5 rounded border border-rose-500/30 text-rose-300">
+                            <strong>【4. 法務風控】</strong><br>AI-05 合規審查<br><span class="text-[10px] text-slate-400">(Manus 自主)</span>
+                        </div>
+                        <div class="bg-slate-900 p-2.5 rounded border border-amber-500/30 text-amber-300">
+                            <strong>【1. 內容行銷】</strong><br>AI-02 內容主編<br><span class="text-[10px] text-slate-400">(Gemini + Meta)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detailed Table -->
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs border-collapse">
+                        <thead>
+                            <tr class="bg-slate-900 border-b border-slate-800 text-slate-400 font-mono">
+                                <th class="p-3">部門名稱</th><th class="p-3">負責 AI 數位員工 (Agent)</th><th class="p-3">核心職責與工作流</th><th class="p-3">主要調度平台</th><th class="p-3">產出與效益</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800 text-slate-300">
+                            <tr>
+                                <td class="p-3 font-bold text-snt-400">0. 總控派工部</td>
+                                <td class="p-3 font-mono text-amber-300">AI-00 星樞總調度官</td>
+                                <td class="p-3">全渠道監察、意圖識別、自動派工與安撫回應</td>
+                                <td class="p-3 font-mono text-amber-400 text-[10px]">Groq (主) / MuleRun (備)</td>
+                                <td class="p-3 text-emerald-400 font-semibold">30秒內接單安撫與派發</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-bold text-snt-400" rowspan="2">1. 業務營銷部</td>
+                                <td class="p-3 font-mono text-blue-300">AI-01 業務諮詢專家</td>
+                                <td class="p-3">24H 接待潛在客戶、需求剖析、預算估算與引導預約</td>
+                                <td class="p-3 font-mono text-blue-400 text-[10px]">Gemini (主) / MuleRun</td>
+                                <td class="p-3 text-slate-300">提升 Leads 轉化率</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-mono text-blue-300">AI-02 內容行銷主編</td>
+                                <td class="p-3">整理救援案例，自動生成 LinkedIn / Threads / YouTube 文案</td>
+                                <td class="p-3 font-mono text-blue-400 text-[10px]">Gemini + Meta Llama</td>
+                                <td class="p-3 text-slate-300">持續產出 B2B 素材</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-bold text-snt-400">2. 技術維運部</td>
+                                <td class="p-3 font-mono text-purple-300">AI-03 系統維運管家</td>
+                                <td class="p-3">監控 Git/Vercel 狀態、Log 診斷、自動化建置檢查與技術排障</td>
+                                <td class="p-3 font-mono text-purple-400 text-[10px]">Copilot (主) + Meta (自託管)</td>
+                                <td class="p-3 text-slate-300">保障系統零障礙時間</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-bold text-snt-400">3. 客服交付部</td>
+                                <td class="p-3 font-mono text-emerald-300">AI-04 交付與工單專員</td>
+                                <td class="p-3">追蹤專案里程碑、收集修改建議、自動回傳進度報告</td>
+                                <td class="p-3 font-mono text-emerald-400 text-[10px]">MuleRun (主) / Manus</td>
+                                <td class="p-3 text-slate-300">建立高滿意度交付體驗</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-bold text-snt-400">4. 法務風控部</td>
+                                <td class="p-3 font-mono text-rose-300">AI-05 合規審查專員</td>
+                                <td class="p-3">審查合約、檢核使用者輸入是否違反免責條款、管理 API 權限</td>
+                                <td class="p-3 font-mono text-rose-400 text-[10px]">Manus (主) / Gemini</td>
+                                <td class="p-3 text-slate-300">建立企業防火牆</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <!-- 肆、 客戶端一鍵連動模組：SNT Nexus SDK -->
+            <section class="bg-cyberPanel p-6 md:p-8 rounded-2xl border border-slate-800 shadow-xl space-y-6">
+                <div class="flex items-center gap-3 border-b border-slate-800 pb-4">
+                    <div class="w-8 h-8 rounded-lg bg-snt-500/20 text-snt-400 flex items-center justify-center font-bold font-mono">肆</div>
+                    <h2 class="text-xl font-bold text-white">客戶端一鍵連動模組：SNT Nexus SDK (Trojan Horse Strategy)</h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6 text-xs">
+                    <div class="space-y-3">
+                        <h3 class="text-sm font-bold text-snt-400">一、 嵌入腳本與零摩擦除錯 (Zero-friction Debugging)</h3>
+                        <p class="text-slate-300 leading-relaxed">
+                            所有救援或新建專案均導入 <code class="bg-slate-900 text-amber-300 px-1.5 py-0.5 rounded font-mono">snt-nexus-badge.js</code> 輕量化模組。當客戶點擊「一鍵呼叫雲端客服」時，系統自動打包傳送 Client ID、網址、裝置資訊及 Console Error Log 給 AI-00 星樞總調度官。
+                        </p>
+                        <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 font-mono text-[11px] space-y-1 text-slate-400">
+                            <div class="text-slate-500">// 在客戶網站 &lt;/body&gt; 前嵌入 SDK</div>
+                            <div>&lt;<span class="text-rose-400">script</span> <span class="text-amber-300">src</span>=<span class="text-emerald-300">"https://xingdeng.tw/sdk/snt-nexus-badge.js"</span>&gt;&lt;/<span class="text-rose-400">script</span>&gt;</div>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <h3 class="text-sm font-bold text-cyan-400">二、 病毒式引流與二次銷售閉環</h3>
+                        <ul class="space-y-2 text-slate-300">
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-link text-snt-400 mt-0.5"></i><span><strong>反向鏈結 (Backlink):</strong> Badge 標示 Powered by SNT，帶追蹤參數跳轉官網獲取 B2B 流量。</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-arrows-spin text-cyan-400 mt-0.5"></i><span><strong>二次增修轉化:</strong> 當客戶提增修，AI-00 自動轉派 AI-01 業務專員開立增修單。</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-photo-film text-amber-400 mt-0.5"></i><span><strong>案例庫去識別化:</strong> 完工工單自動去除敏感數據，交由 AI-02 生成 Build in Public 素材。</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- 伍、 專案里程碑與執行時程表 -->
+            <section class="bg-cyberPanel p-6 md:p-8 rounded-2xl border border-slate-800 shadow-xl space-y-6">
+                <div class="flex items-center gap-3 border-b border-slate-800 pb-4">
+                    <div class="w-8 h-8 rounded-lg bg-snt-500/20 text-snt-400 flex items-center justify-center font-bold font-mono">伍</div>
+                    <h2 class="text-xl font-bold text-white">專案里程碑與執行時程表 (Project Roadmap)</h2>
+                </div>
+                <div class="relative border-l-2 border-snt-500/30 ml-4 space-y-6 text-xs">
+                    <div class="relative pl-6">
+                        <span class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-snt-500 border-4 border-slate-950"></span>
+                        <div class="font-bold text-snt-400 font-mono text-sm">Phase 1 | M1: 品牌煥新與法律生效 (1 - 2 天)</div>
+                        <p class="text-slate-300 mt-1">更新 index.html Meta 與 Logo，配置 privacy.html 免責條款，Git Push 觸發 Vercel 自動部署。</p>
+                        <span class="inline-block mt-1 bg-slate-900 text-slate-400 px-2 py-0.5 rounded text-[10px] font-mono">交付物：SNT 官方網站正式上線 + 法律條款生效</span>
+                    </div>
+                    <div class="relative pl-6">
+                        <span class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-cyan-500 border-4 border-slate-950"></span>
+                        <div class="font-bold text-cyan-400 font-mono text-sm">Phase 2 | M2: 影音實錄與行銷矩陣 (3 - 5 天)</div>
+                        <p class="text-slate-300 mt-1">錄製「救援 Vercel 爛尾樓」專案實況，剪輯 1 支完整 Showcase 與 3 支短影音，於 LinkedIn / Threads 發布。</p>
+                        <span class="inline-block mt-1 bg-slate-900 text-slate-400 px-2 py-0.5 rounded text-[10px] font-mono">交付物：爛尾樓救援影音素材 + 多平台 B2B 推播文案</span>
+                    </div>
+                    <div class="relative pl-6">
+                        <span class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-purple-500 border-4 border-slate-950"></span>
+                        <div class="font-bold text-purple-400 font-mono text-sm">Phase 3 | M3: 雲端辦公室與 SDK 部署 (1 - 2 週)</div>
+                        <p class="text-slate-300 mt-1">配置 6 大 AI Agent 角色 Prompt，開發 snt-nexus-badge.js 連線模組，串接對話框與派工路由。接入 Gemini / Copilot / Groq / Meta / Manus / MuleRun 六大平台 API。</p>
+                        <span class="inline-block mt-1 bg-slate-900 text-slate-400 px-2 py-0.5 rounded text-[10px] font-mono">交付物：SNT 雲端辦公室營運 + SDK 標準套件</span>
+                    </div>
+                    <div class="relative pl-6">
+                        <span class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-amber-500 border-4 border-slate-950"></span>
+                        <div class="font-bold text-amber-400 font-mono text-sm">Phase 4 | M4: 常態營運與 B2B 擴展 (常態營運)</div>
+                        <p class="text-slate-300 mt-1">自動接收 B2B 救援工單，常態產出 Build in Public 素材，定期進行 AI 模型與 Prompt 優化。持續調校六大平台路由權重與成本效益。</p>
+                        <span class="inline-block mt-1 bg-slate-900 text-slate-400 px-2 py-0.5 rounded text-[10px] font-mono">交付物：自動化 Agency 商業閉環 + 穩定營收流</span>
+                    </div>
+                </div>
+            </section>
+            <!-- 陸、 Kintone 白話風格溝通對照 -->
+            <section class="bg-cyberPanel p-6 md:p-8 rounded-2xl border border-slate-800 shadow-xl space-y-6">
+                <div class="flex items-center gap-3 border-b border-slate-800 pb-4">
+                    <div class="w-8 h-8 rounded-lg bg-snt-500/20 text-snt-400 flex items-center justify-center font-bold font-mono">陸</div>
+                    <h2 class="text-xl font-bold text-white">前台客戶溝通：Kintone 白話風格話術對照表</h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4 text-xs">
+                    <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 space-y-2">
+                        <span class="text-rose-400 font-bold block">❌ 避免使用（太硬的技術術語）</span>
+                        <p class="text-slate-400 font-mono">整合大語言模型進行自動化產權診斷與結構工單派發</p>
+                        <hr class="border-slate-800 my-2">
+                        <span class="text-emerald-400 font-bold block">⭕ Kintone 白話溝通風格</span>
+                        <p class="text-white font-medium">【24小時 AI 專屬助理】客戶隨時提問，AI 即時解答！自動幫你整理好案件摘要與評估報告，大幅省下 80% 人力回覆時間。</p>
+                    </div>
+                    <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 space-y-2">
+                        <span class="text-rose-400 font-bold block">❌ 避免使用（太硬的技術術語）</span>
+                        <p class="text-slate-400 font-mono">採用 Next.js 無伺服器 API 搭配 Native Fallback 消除 503 錯誤</p>
+                        <hr class="border-slate-800 my-2">
+                        <span class="text-emerald-400 font-bold block">⭕ Kintone 白話溝通風格</span>
+                        <p class="text-white font-medium">【客戶諮詢零漏接】無論多少人同時上線填表，系統順暢不卡關，第一時間把客戶需求安全送到你手上。</p>
+                    </div>
+                    <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 space-y-2">
+                        <span class="text-rose-400 font-bold block">❌ 避免使用（太硬的技術術語）</span>
+                        <p class="text-slate-400 font-mono">採用 Email OTP 一次性驗證碼與 Session Token 授權機制</p>
+                        <hr class="border-slate-800 my-2">
+                        <span class="text-emerald-400 font-bold block">⭕ Kintone 白話溝通風格</span>
+                        <p class="text-white font-medium">【免記密碼，10秒輕鬆登入】再也不用為了「忘記密碼」手忙腳亂！只要輸入 Email 收到驗證碼，點一下就能隨時登入查看進度。</p>
+                    </div>
+                    <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 space-y-2">
+                        <span class="text-rose-400 font-bold block">❌ 避免使用（太硬的技術術語）</span>
+                        <p class="text-slate-400 font-mono">部署 Session Replay 自動化軌跡錄製與 Heatmap 熱點分析</p>
+                        <hr class="border-slate-800 my-2">
+                        <span class="text-emerald-400 font-bold block">⭕ Kintone 白話溝通風格</span>
+                        <p class="text-white font-medium">【自動紀錄客戶看重什麼】自動重播訪客在網站上的操作過程，讓你一眼看出客戶對哪個方案最感興趣、在哪裡卡住。</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- VIEW 2: 8K LAB -->
+        <div id="view-lab" class="hidden space-y-8">
+            <div class="bg-slate-900/90 p-6 rounded-2xl border border-slate-800 flex flex-wrap items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-2xl font-black text-white flex items-center gap-2"><i class="fa-solid fa-microchip text-snt-400"></i> 8K 沉浸式科技藝廊 (Cyber Lab / Gallery)</h2>
+                    <p class="text-xs text-slate-400 mt-1">將抽象 AI Agent 運算高規格包裝為微型機器人在晶體沙盒內實體銲接鋪線的展覽館</p>
+                </div>
+                <div class="flex items-center gap-2 text-xs font-mono bg-slate-950 p-1.5 rounded-xl border border-slate-800">
+                    <span class="text-slate-500 px-2">濾鏡切換:</span>
+                    <button onclick="setLabFilter('normal')" id="filter-normal" class="px-3 py-1.5 rounded bg-snt-600 text-white font-bold">預設 (Default)</button>
+                    <button onclick="setLabFilter('matrix')" id="filter-matrix" class="px-3 py-1.5 rounded bg-slate-800 text-emerald-400 hover:bg-slate-700">綠光矩陣 (Matrix)</button>
+                    <button onclick="setLabFilter('thermal')" id="filter-thermal" class="px-3 py-1.5 rounded bg-slate-800 text-rose-400 hover:bg-slate-700">熱顯像 (Thermal)</button>
+                    <button onclick="setLabFilter('cyan')" id="filter-cyan" class="px-3 py-1.5 rounded bg-slate-800 text-cyan-400 hover:bg-slate-700">電光藍 (Cyber Cyan)</button>
+                </div>
+            </div>
+            <div id="labCanvasContainer" class="bg-slate-950 p-6 rounded-2xl border border-cyan-500/30 relative overflow-hidden transition-all duration-300 hud-border">
+                <div class="absolute top-4 left-4 z-10 text-[10px] font-mono text-cyan-400/80 space-y-0.5 bg-slate-950/80 p-2 rounded border border-cyan-500/20">
+                    <div>MEM_ISOLATION: 100%</div><div>SANDBOX_TEMP: 32°C</div><div>CORE_STATUS: ACTIVE</div><div>GEO_NODES: 1,024 ONLINE</div>
+                </div>
+                <div class="absolute top-4 right-4 z-10 text-[10px] font-mono text-amber-400/80 bg-slate-950/80 p-2 rounded border border-amber-500/20">
+                    <div>LIVE FPS: 60</div><div>AGENT_MATRIX: 6/6</div>
+                </div>
+                <div id="labArtDisplay" class="py-16 text-center space-y-6 transition-all duration-500">
+                    <canvas id="cyberSandboxCanvas" class="w-full h-64 bg-slate-900/50 rounded-xl border border-slate-800"></canvas>
+                    <div class="max-w-md mx-auto space-y-2">
+                        <span class="text-xs font-mono text-snt-400 uppercase tracking-widest">[ 展品 #01：微型蛛形機器人沙盒銲接 ]</span>
+                        <h3 class="text-lg font-bold text-white">SNT AI Agent 隔離沙盒脈衝光纖鋪線</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">即時模擬 AI Agent 正在為客戶專案熔接核心架構與 GEO 拓撲節點，完全擺脫公版 Bootstrap/Tailwind 模板感，帶來極致視覺震撼與溢價信任感。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- VIEW 3: TOOLS -->
+        <div id="view-tools" class="hidden space-y-8">
+            <div class="grid lg:grid-cols-2 gap-6">
+                <!-- GEO Free Detector -->
+                <div class="bg-cyberPanel p-6 rounded-2xl border border-slate-800 shadow-xl space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                        <h3 class="font-bold text-base text-white flex items-center gap-2"><i class="fa-solid fa-magnifying-glass-chart text-snt-400"></i> GEO 免費檢測器 (Lead Magnet)</h3>
+                        <span class="text-[10px] font-mono bg-snt-500/20 text-snt-300 px-2 py-0.5 rounded">表單留存率 x3</span>
+                    </div>
+                    <p class="text-xs text-slate-400">輸入您的企業網址，檢測網站是否能在 AI 搜尋引擎 (ChatGPT, Claude, Perplexity) 中被優先推薦：</p>
+                    <div class="flex gap-2">
+                        <input id="geoUrlInput" type="text" placeholder="https://yourcompany.com" class="flex-1 bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-200 outline-none focus:border-snt-500 font-mono">
+                        <button onclick="runGeoScan()" class="bg-snt-600 hover:bg-snt-500 text-white px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5"><i class="fa-solid fa-bolt"></i> 免費檢測</button>
+                    </div>
+                    <div id="geoScanProgress" class="hidden space-y-2 pt-2">
+                        <div class="flex justify-between text-[10px] font-mono text-slate-400"><span>正在分析 AI 拓撲結構與搜尋能見度...</span><span id="geoPercentText">0%</span></div>
+                        <div class="w-full bg-slate-950 h-2 rounded-full overflow-hidden border border-slate-800"><div id="geoProgressBar" class="bg-gradient-to-r from-snt-500 to-cyan-400 h-full w-0 transition-all duration-300"></div></div>
+                    </div>
+                    <div id="geoScanResult" class="hidden pt-2 grid grid-cols-3 gap-2 text-center text-xs font-mono">
+                        <div class="bg-slate-950 p-3 rounded-xl border border-slate-800"><span class="text-slate-500 text-[10px] block">SEO 評分</span><span class="text-emerald-400 font-bold text-lg">62 分</span></div>
+                        <div class="bg-slate-950 p-3 rounded-xl border border-rose-500/40"><span class="text-slate-500 text-[10px] block">GEO 能見度</span><span class="text-rose-400 font-bold text-lg">28 分</span></div>
+                        <div class="bg-slate-950 p-3 rounded-xl border border-amber-500/40"><span class="text-slate-500 text-[10px] block">ChatGPT 搜尋</span><span class="text-amber-400 font-bold text-base">搜不到你</span></div>
+                    </div>
+                </div>
+                <!-- ROI Calculator -->
+                <div class="bg-cyberPanel p-6 rounded-2xl border border-slate-800 shadow-xl space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                        <h3 class="font-bold text-base text-white flex items-center gap-2"><i class="fa-solid fa-calculator text-amber-400"></i> ROI 營收增長計算器</h3>
+                        <span class="text-[10px] font-mono bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded">老闆最看重</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3 text-xs">
+                        <div><label class="text-slate-400 block mb-1">每月網站訪客數 (Visits):</label><input id="roiVisits" type="number" value="10000" oninput="calculateROI()" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-slate-200 outline-none focus:border-amber-500 font-mono"></div>
+                        <div><label class="text-slate-400 block mb-1">平均客單價 (NT$):</label><input id="roiPrice" type="number" value="3000" oninput="calculateROI()" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-slate-200 outline-none focus:border-amber-500 font-mono"></div>
+                    </div>
+                    <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-center space-y-1">
+                        <span class="text-xs text-slate-400">導入 SNT 系統後預估「每月增加營收」：</span>
+                        <div id="roiGainsDisplay" class="text-2xl md:text-3xl font-black text-amber-400 font-mono">+ NT$ 2,010,000 / 月</div>
+                        <span class="text-[10px] text-slate-500 block">計算公式：訪客 x (預估轉換率 8.7% - 當前 2.0%) x 客單價</span>
+                    </div>
+                </div>
+            </div>
+            <!-- War Room -->
+            <div class="bg-cyberPanel p-6 rounded-2xl border border-slate-800 shadow-xl space-y-4">
+                <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
+                    <h3 class="font-bold text-base text-white flex items-center gap-2"><i class="fa-solid fa-chart-line text-cyan-400"></i> SNT 實時戰情室 (War Room Live)</h3>
+                    <span class="text-[10px] font-mono text-emerald-400 flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> 資料每 60 秒自動跟新 (Live Sync)</span>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center font-mono">
+                    <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-1"><span class="text-slate-500 text-xs">當月總營收</span><div id="warRoomRevenue" class="text-xl font-bold text-white">NT$ 4,820,000</div><span class="text-[10px] text-emerald-400 font-bold">↑ +18.4%</span></div>
+                    <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-1"><span class="text-slate-500 text-xs">今日救援工單</span><div id="warRoomTickets" class="text-xl font-bold text-snt-400">12 宗 (處理中)</div><span class="text-[10px] text-snt-300">回應時間 &lt; 30s</span></div>
+                    <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-1"><span class="text-slate-500 text-xs">平均轉換率</span><div class="text-xl font-bold text-amber-400">8.72%</div><span class="text-[10px] text-amber-300">業界平均 2.1%</span></div>
+                    <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-1"><span class="text-slate-500 text-xs">SDK 連動客戶數</span><div class="text-xl font-bold text-purple-400">148 家</div><span class="text-[10px] text-purple-300">Trojan Horse 網絡</span></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Toast -->
+    <div id="toast" class="fixed bottom-6 right-6 bg-slate-800 border border-slate-700 text-white px-4 py-3 rounded-xl shadow-2xl flex items-center gap-3 transition-all transform translate-y-20 opacity-0 z-50 text-xs">
+        <i id="toastIcon" class="fa-solid fa-circle-check text-emerald-400 text-base"></i>
+        <span id="toastMsg">操作成功</span>
+    </div>
+
+    <script>
+        window.onload = function() {
+            initSandboxCanvas();
+            calculateROI();
+        };
+
+        function switchView(viewName) {
+            ['view-doc','view-lab','view-tools'].forEach(id => document.getElementById(id).classList.add('hidden'));
+            ['btn-view-doc','btn-view-lab','btn-view-tools'].forEach(id => {
+                document.getElementById(id).className = "px-3.5 py-2 rounded-lg bg-slate-800 text-slate-300 font-medium flex items-center gap-2 transition hover:bg-slate-700";
+            });
+            document.getElementById('view-' + viewName).classList.remove('hidden');
+            document.getElementById('btn-view-' + viewName).className = "px-3.5 py-2 rounded-lg bg-snt-600 text-white font-medium flex items-center gap-2 transition hover:bg-snt-500";
+        }
+
+        function setLabFilter(filterType) {
+            const container = document.getElementById('labCanvasContainer');
+            container.className = "bg-slate-950 p-6 rounded-2xl border border-cyan-500/30 relative overflow-hidden transition-all duration-300 hud-border";
+            if (filterType === 'matrix') container.classList.add('filter-matrix');
+            else if (filterType === 'thermal') container.classList.add('filter-thermal');
+            else if (filterType === 'cyan') container.classList.add('filter-cyan');
+            showToast(`已套用 [${filterType.toUpperCase()}] 藝廊觀看視覺濾鏡`, "info");
+        }
+
+        function initSandboxCanvas() {
+            const canvas = document.getElementById('cyberSandboxCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+            let particles = [];
+            for (let i = 0; i < 40; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width, y: Math.random() * canvas.height,
+                    vx: (Math.random() - 0.5) * 2, vy: (Math.random() - 0.5) * 2,
+                    radius: Math.random() * 2 + 1
+                });
+            }
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = "rgba(20, 184, 166, 0.8)";
+                ctx.strokeStyle = "rgba(6, 182, 212, 0.2)";
+                particles.forEach((p, index) => {
+                    p.x += p.vx; p.y += p.vy;
+                    if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                    if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                    ctx.fill();
+                    for (let j = index + 1; j < particles.length; j++) {
+                        const p2 = particles[j];
+                        const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+                        if (dist < 80) { ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(p2.x, p2.y); ctx.stroke(); }
+                    }
+                });
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+
+        function runGeoScan() {
+            const input = document.getElementById('geoUrlInput').value.trim();
+            if (!input) { showToast("請輸入欲檢測的網址！", "warning"); return; }
+            document.getElementById('geoScanProgress').classList.remove('hidden');
+            document.getElementById('geoScanResult').classList.add('hidden');
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 10;
+                document.getElementById('geoProgressBar').style.width = `${progress}%`;
+                document.getElementById('geoPercentText').innerText = `${progress}%`;
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    document.getElementById('geoScanProgress').classList.add('hidden');
+                    document.getElementById('geoScanResult').classList.remove('hidden');
+                    showToast("GEO 免費分析完成！得分已算出", "success");
+                }
+            }, 150);
+        }
+
+        function calculateROI() {
+            const visits = parseFloat(document.getElementById('roiVisits').value) || 0;
+            const price = parseFloat(document.getElementById('roiPrice').value) || 0;
+            const gains = Math.round(visits * 0.067 * price);
+            document.getElementById('roiGainsDisplay').innerText = `+ NT$ ${gains.toLocaleString()} / 月`;
+        }
+
+        function exportMarkdown() {
+            const md = `# 光曜星樞 (Singularity Nexus Technology, SNT) 雲端辦公室建置暨專案推進企劃書 (A1 版)\n\n` +
+            `* 文件編號：SNT-PROPOSAL-2026-A1\n* 發布日期：2026 年 9 月\n* 負責單位：光曜星樞 (SNT) 總管理處\n* AI 引擎：Gemini / Copilot / Groq / Meta / Manus / MuleRun 混合調度\n\n` +
+            `## 壹、 專案總覽\nSNT 旨在提供企業級 B2B AI 自動化解決方案與爛尾樓救援服務...\n\n` +
+            `## 貳、 5 大部門與 6 大 AI Agent\n- AI-00 星樞總調度官 (Groq 超低延遲驅動)\n- AI-01 業務諮詢專家 (Gemini 多模態)\n- AI-02 內容行銷主編 (Gemini + Meta Llama)\n- AI-03 系統維運管家 (Copilot + Meta 自託管)\n- AI-04 交付與工單專員 (MuleRun + Manus)\n- AI-05 合規審查專員 (Manus + Gemini)\n`;
+            const blob = new Blob([md], { type: 'text/markdown' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url; a.download = `SNT_Proposal_A1.md`; a.click();
+            showToast("已成功匯出 Markdown 企劃書文件！", "success");
+        }
+
+        function showToast(msg, type = "info") {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMsg').innerText = msg;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => { toast.classList.add('translate-y-20', 'opacity-0'); }, 3000);
+        }
+    </script>
+
+    <!-- FOOTER -->
+    <footer class="no-print border-t border-slate-800 bg-slate-950 px-6 py-8 mt-12">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4 text-xs text-slate-500 font-mono">
+            <div>© 2026 光曜星樞 SNT · <a href="/pricing.html" class="hover:text-slate-300">定價</a> · <a href="/services.html" class="hover:text-slate-300">服務</a> · <a href="/exhibition.html" class="hover:text-slate-300">藝廊</a> · <a href="/privacy.html" class="hover:text-slate-300">法律條款</a></div>
+            <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> xingdeng.tw</div>
+        </div>
+    </footer>
+</body>
+</html>
