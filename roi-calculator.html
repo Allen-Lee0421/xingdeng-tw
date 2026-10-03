@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ROI 試算工具 | 光耀星樞 SNT — 計算 AI 投資報酬率</title>
+<meta name="description" content="使用光耀星樞 SNT 的 AI 投資報酬率試算工具，快速計算導入 AI 後每月與每年可節省的成本，了解投資報酬率。">
+<link rel="canonical" href="https://xingdeng.tw/roi-calculator.html">
+<meta property="og:title" content="ROI 試算工具 | 光耀星樞 SNT">
+<meta property="og:description" content="看看導入 AI 能幫你省多少 — 即時計算 AI 投資報酬率。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://xingdeng.tw/roi-calculator.html">
+<meta property="og:image" content="https://xingdeng.tw/og-image.jpg">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+TC:wght@300;400;500;700;900&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        bg: '#070a12',
+        panel: '#0f172a',
+        cyan: '#00e5c8',
+        gold: '#fbbf24',
+      },
+      fontFamily: {
+        sans: ['Inter', 'Noto Sans TC', 'sans-serif'],
+        tc: ['Noto Sans TC', 'sans-serif'],
+        code: ['Fira Code', 'monospace'],
+      }
+    }
+  }
+}
+</script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #070a12; color: #e2e8f0; font-family: 'Noto Sans TC', 'Inter', sans-serif; }
+.glow-cyan { text-shadow: 0 0 20px rgba(0,229,200,0.5); }
+.glow-gold { text-shadow: 0 0 20px rgba(251,191,36,0.5); }
+.card-glow { box-shadow: 0 0 30px rgba(0,229,200,0.08); }
+.slider-cyan::-webkit-slider-thumb { appearance: none; width: 22px; height: 22px; border-radius: 50%; background: #00e5c8; cursor: pointer; box-shadow: 0 0 10px rgba(0,229,200,0.6); }
+.slider-cyan::-webkit-slider-runnable-track { height: 6px; border-radius: 3px; background: linear-gradient(90deg, #00e5c8 var(--val, 50%), #1e293b var(--val, 50%)); }
+.slider-cyan { appearance: none; width: 100%; background: transparent; cursor: pointer; }
+.counter-animate { transition: all 0.3s ease; }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.fade-in-up { animation: fadeInUp 0.6s ease forwards; }
+.nav-link { position: relative; }
+.nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #00e5c8; transition: width 0.3s; }
+.nav-link:hover::after { width: 100%; }
+.hero-grid { background-image: radial-gradient(circle at 1px 1px, rgba(0,229,200,0.08) 1px, transparent 0); background-size: 40px 40px; }
+</style>
+</head>
+<body class="min-h-screen">
+
+<nav class="fixed top-0 w-full z-50 bg-bg/90 backdrop-blur-xl border-b border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="/" class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan to-gold flex items-center justify-center">
+          <span class="text-bg font-bold text-sm">S</span>
+        </div>
+        <span class="font-bold text-lg text-white font-tc">光耀星樞</span>
+      </a>
+      <div class="hidden lg:flex items-center gap-6">
+        <a href="/" class="nav-link text-sm text-gray-300 hover:text-cyan transition font-tc">首頁</a>
+        <a href="/services.html" class="nav-link text-sm text-gray-300 hover:text-cyan transition font-tc">服務</a>
+        <a href="/ai-office.html" class="nav-link text-sm text-gray-300 hover:text-cyan transition font-tc">AI雲端辦公室</a>
+        <a href="/pricing.html" class="nav-link text-sm text-gray-300 hover:text-cyan transition font-tc">定價</a>
+        <a href="/cases.html" class="nav-link text-sm text-gray-300 hover:text-cyan transition font-tc">案例</a>
+        <a href="/faq.html" class="nav-link text-sm text-gray-300 hover:text-cyan transition font-tc">FAQ</a>
+        <a href="/booking.html" class="nav-link text-sm text-gray-300 hover:text-cyan transition font-tc">預約</a>
+        <a href="/contact.html" class="px-4 py-2 bg-cyan/10 border border-cyan/30 rounded-lg text-cyan text-sm hover:bg-cyan/20 transition font-tc">聯絡</a>
+      </div>
+      <button id="mobileMenuBtn" class="lg:hidden text-gray-300 hover:text-cyan">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="hidden lg:hidden bg-panel border-t border-white/5">
+    <div class="px-4 py-4 space-y-3">
+      <a href="/" class="block text-sm text-gray-300 hover:text-cyan font-tc">首頁</a>
+      <a href="/services.html" class="block text-sm text-gray-300 hover:text-cyan font-tc">服務</a>
+      <a href="/ai-office.html" class="block text-sm text-gray-300 hover:text-cyan font-tc">AI雲端辦公室</a>
+      <a href="/pricing.html" class="block text-sm text-gray-300 hover:text-cyan font-tc">定價</a>
+      <a href="/cases.html" class="block text-sm text-gray-300 hover:text-cyan font-tc">案例</a>
+      <a href="/faq.html" class="block text-sm text-gray-300 hover:text-cyan font-tc">FAQ</a>
+      <a href="/booking.html" class="block text-sm text-gray-300 hover:text-cyan font-tc">預約</a>
+      <a href="/contact.html" class="block text-sm text-gray-300 hover:text-cyan font-tc">聯絡</a>
+    </div>
+  </div>
+</nav>
+
+<section class="pt-24 pb-8 hero-grid relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-b from-cyan/5 to-transparent pointer-events-none"></div>
+  <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan/10 border border-cyan/20 text-cyan text-sm mb-6 font-tc">
+      <i class="fas fa-calculator"></i>
+      <span>免費試算工具</span>
+    </div>
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 font-tc leading-tight">
+      AI 投資報酬率<span class="text-cyan glow-cyan">試算</span>
+    </h1>
+    <p class="text-lg md:text-xl text-gray-400 font-tc">看看導入 AI 能幫你省多少</p>
+  </div>
+</section>
+
+<section class="pb-20">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="grid lg:grid-cols-2 gap-8">
+
+      <div class="bg-panel rounded-2xl p-6 md:p-8 border border-white/5 card-glow">
+        <h2 class="text-xl font-bold text-white mb-6 font-tc flex items-center gap-2">
+          <i class="fas fa-sliders text-cyan"></i> 輸入你的資訊
+        </h2>
+
+        <div class="space-y-6">
+          <div>
+            <label class="block text-sm text-gray-400 mb-2 font-tc">每月員工人數</label>
+            <div class="relative">
+              <input type="number" id="employeeCount" value="10" min="1" max="1000"
+                class="w-full bg-bg border border-white/10 rounded-xl px-4 py-3 text-white text-lg font-code focus:outline-none focus:border-cyan/50 transition">
+              <span class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 text-sm font-tc">人</span>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm text-gray-400 mb-2 font-tc">平均月薪</label>
+            <div class="relative">
+              <input type="number" id="avgSalary" value="35000" min="1" step="1000"
+                class="w-full bg-bg border border-white/10 rounded-xl px-4 py-3 text-white text-lg font-code focus:outline-none focus:border-cyan/50 transition">
+              <span class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 text-sm font-tc">NT$</span>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm text-gray-400 mb-2 font-tc">
+              每日重複工作時數：<span id="hoursLabel" class="text-cyan font-code">3</span> 小時
+            </label>
+            <input type="range" id="repeatHours" min="1" max="8" value="3"
+              class="slider-cyan" style="--val: 28.57%">
+            <div class="flex justify-between text-xs text-gray-600 mt-1 font-code">
+              <span>1h</span><span>8h</span>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm text-gray-400 mb-2 font-tc">
+              預估 AI 取代比例：<span id="replaceLabel" class="text-gold font-code">50</span>%
+            </label>
+            <input type="range" id="replaceRate" min="10" max="80" value="50"
+              class="slider-cyan" style="--val: 57.14%">
+            <div class="flex justify-between text-xs text-gray-600 mt-1 font-code">
+              <span>10%</span><span>80%</span>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm text-gray-400 mb-2 font-tc">選擇方案費用</label>
+            <select id="planCost"
+              class="w-full bg-bg border border-white/10 rounded-xl px-4 py-3 text-white text-lg font-code focus:outline-none focus:border-cyan/50 transition appearance-none">
+              <option value="15000">基本方案 — NT$15,000/月</option>
+              <option value="30000" selected>專業方案 — NT$30,000/月</option>
+              <option value="50000">企業方案 — NT$50,000/月</option>
+              <option value="80000">旗艦方案 — NT$80,000/月</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <div class="bg-panel rounded-2xl p-6 md:p-8 border border-cyan/20 card-glow relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-cyan/5 rounded-full blur-3xl"></div>
+          <h2 class="text-xl font-bold text-white mb-6 font-tc flex items-center gap-2 relative z-10">
+            <i class="fas fa-chart-line text-cyan"></i> 試算結果
+          </h2>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+            <div class="bg-bg rounded-xl p-4 text-center border border-white/5">
+              <p class="text-xs text-gray-500 mb-1 font-tc">每月節省</p>
+              <p class="text-2xl md:text-3xl font-black text-cyan font-code counter-animate" id="monthlySaving">NT$0</p>
+            </div>
+            <div class="bg-bg rounded-xl p-4 text-center border border-white/5">
+              <p class="text-xs text-gray-500 mb-1 font-tc">每年節省</p>
+              <p class="text-2xl md:text-3xl font-black text-gold font-code counter-animate" id="yearlySaving">NT$0</p>
+            </div>
+            <div class="bg-bg rounded-xl p-4 text-center border border-white/5">
+              <p class="text-xs text-gray-500 mb-1 font-tc">投資報酬率</p>
+              <p class="text-2xl md:text-3xl font-black text-white font-code counter-animate" id="roiPercent">0%</p>
+            </div>
+          </div>
+
+          <div class="bg-bg rounded-xl p-4 border border-white/5">
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-sm text-gray-400 font-tc">ROI 指標</span>
+              <span class="text-sm text-cyan font-code" id="roiBarLabel">0%</span>
+            </div>
+            <div class="w-full h-3 bg-panel rounded-full overflow-hidden">
+              <div id="roiBar" class="h-full bg-gradient-to-r from-cyan to-gold rounded-full transition-all duration-500" style="width: 0%"></div>
+            </div>
+          </div>
+
+          <div class="mt-4 p-4 bg-bg/50 rounded-xl border border-white/5">
+            <p class="text-xs text-gray-500 font-tc leading-relaxed" id="summaryText">
+              調整左方參數以查看試算結果...
+            </p>
+          </div>
+        </div>
+
+        <a href="/booking.html"
+          class="block w-full text-center px-8 py-4 bg-gradient-to-r from-cyan to-emerald-400 text-bg font-bold rounded-xl text-lg hover:shadow-lg hover:shadow-cyan/20 transition-all duration-300 font-tc">
+          <i class="fas fa-calendar-check mr-2"></i> 預約諮詢，了解詳細方案
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="bg-panel border-t border-white/5 py-12">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="grid md:grid-cols-4 gap-8 mb-8">
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan to-gold flex items-center justify-center">
+            <span class="text-bg font-bold text-sm">S</span>
+          </div>
+          <span class="font-bold text-lg text-white font-tc">光耀星樞 SNT</span>
+        </div>
+        <p class="text-sm text-gray-500 font-tc leading-relaxed">以 AI 驅動企業成長，提供智能雲端辦公室解決方案。</p>
+      </div>
+      <div>
+        <h4 class="text-sm font-bold text-white mb-3 font-tc">快速連結</h4>
+        <div class="space-y-2">
+          <a href="/services.html" class="block text-sm text-gray-500 hover:text-cyan transition font-tc">服務</a>
+          <a href="/pricing.html" class="block text-sm text-gray-500 hover:text-cyan transition font-tc">定價</a>
+          <a href="/cases.html" class="block text-sm text-gray-500 hover:text-cyan transition font-tc">案例</a>
+          <a href="/faq.html" class="block text-sm text-gray-500 hover:text-cyan transition font-tc">FAQ</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-sm font-bold text-white mb-3 font-tc">聯絡資訊</h4>
+        <div class="space-y-2">
+          <p class="text-sm text-gray-500 font-tc"><i class="fas fa-envelope mr-2 text-cyan"></i>service@xingdeng.tw</p>
+          <p class="text-sm text-gray-500 font-tc"><i class="fab fa-line mr-2 text-cyan"></i>LINE @559julyu</p>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-sm font-bold text-white mb-3 font-tc">追蹤我們</h4>
+        <div class="flex gap-3">
+          <a href="#" class="w-9 h-9 rounded-lg bg-bg border border-white/10 flex items-center justify-center text-gray-500 hover:text-cyan hover:border-cyan/30 transition"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="w-9 h-9 rounded-lg bg-bg border border-white/10 flex items-center justify-center text-gray-500 hover:text-cyan hover:border-cyan/30 transition"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="w-9 h-9 rounded-lg bg-bg border border-white/10 flex items-center justify-center text-gray-500 hover:text-cyan hover:border-cyan/30 transition"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="w-9 h-9 rounded-lg bg-bg border border-white/10 flex items-center justify-center text-gray-500 hover:text-cyan hover:border-cyan/30 transition"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/5 pt-6 text-center">
+      <p class="text-xs text-gray-600 font-tc">&copy; 2026 光耀星樞 SNT. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+  document.getElementById('mobileMenu').classList.toggle('hidden');
+});
+
+const employeeCount = document.getElementById('employeeCount');
+const avgSalary = document.getElementById('avgSalary');
+const repeatHours = document.getElementById('repeatHours');
+const replaceRate = document.getElementById('replaceRate');
+const planCost = document.getElementById('planCost');
+
+function formatNumber(n) {
+  return Math.round(n).toLocaleString('en-US');
+}
+
+function updateSlider(slider) {
+  const min = parseFloat(slider.min);
+  const max = parseFloat(slider.max);
+  const val = parseFloat(slider.value);
+  const pct = ((val - min) / (max - min)) * 100;
+  slider.style.setProperty('--val', pct + '%');
+}
+
+function calculate() {
+  const emp = parseFloat(employeeCount.value) || 0;
+  const salary = parseFloat(avgSalary.value) || 0;
+  const hours = parseFloat(repeatHours.value) || 0;
+  const replace = parseFloat(replaceRate.value) || 0;
+  const plan = parseFloat(planCost.value) || 0;
+
+  document.getElementById('hoursLabel').textContent = hours;
+  document.getElementById('replaceLabel').textContent = replace;
+
+  updateSlider(repeatHours);
+  updateSlider(replaceRate);
+
+  const monthlySaving = emp * salary * (hours / 8) * (replace / 100);
+  const yearlySaving = monthlySaving * 12;
+  const yearlyCost = plan * 12;
+  const roi = yearlyCost > 0 ? ((yearlySaving - yearlyCost) / yearlyCost) * 100 : 0;
+
+  document.getElementById('monthlySaving').textContent = 'NT$' + formatNumber(monthlySaving);
+  document.getElementById('yearlySaving').textContent = 'NT$' + formatNumber(yearlySaving);
+  document.getElementById('roiPercent').textContent = Math.round(roi) + '%';
+
+  const barWidth = Math.min(Math.max(roi, 0), 500) / 5;
+  document.getElementById('roiBar').style.width = Math.min(barWidth, 100) + '%';
+  document.getElementById('roiBarLabel').textContent = Math.round(roi) + '%';
+
+  if (roi > 0) {
+    document.getElementById('summaryText').innerHTML =
+      '以 <strong class="text-white">' + emp + '</strong> 位員工、月薪 <strong class="text-white">NT$' + formatNumber(salary) + '</strong> 計算，' +
+      '每日 <strong class="text-white">' + hours + '</strong> 小時的重複工作中，' +
+      'AI 可取代 <strong class="text-cyan">' + replace + '%</strong>。' +
+      '每年預估節省 <strong class="text-gold">NT$' + formatNumber(yearlySaving) + '</strong>，' +
+      '投資報酬率達 <strong class="text-cyan">' + Math.round(roi) + '%</strong>。';
+  } else {
+    document.getElementById('summaryText').textContent = '調整左方參數以查看試算結果...';
+  }
+}
+
+[employeeCount, avgSalary, repeatHours, replaceRate, planCost].forEach(el => {
+  el.addEventListener('input', calculate);
+  el.addEventListener('change', calculate);
+});
+
+calculate();
+</script>
+</body>
+</html>

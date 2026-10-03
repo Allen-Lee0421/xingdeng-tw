@@ -1,0 +1,449 @@
+<!DOCTYPE html><html lang="zh-TW" class="dark">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 健診中心 | 光耀星樞 SNT — 免費評估你的企業 AI 就緒度</title>
+<meta name="description" content="光耀星樞 AI 健診中心：免費評估企業 AI 就緒度，取得 AI 成熟度評分、客製化導入建議與投資報酬預估。已有 127 家企業完成健診。">
+<meta name="keywords" content="AI健診,AI就緒度評估,企業AI導入,AI成熟度,光耀星樞,SNT,AI評估工具">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://xingdeng.tw/ai-checkup.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://xingdeng.tw/ai-checkup.html">
+<meta property="og:title" content="AI 健診中心 | 光耀星樞 SNT — 免費評估你的企業 AI 就緒度">
+<meta property="og:description" content="免費取得企業 AI 健診報告：AI 成熟度評分、客製化建議、投資報酬預估。">
+<meta property="og:image" content="https://xingdeng.tw/og-image.svg">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:site_name" content="光耀星樞 SNT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI 健診中心 | 光耀星樞 SNT">
+<meta name="twitter:description" content="免費評估你的企業 AI 就緒度，取得客製化健診報告。">
+<meta name="twitter:image" content="https://xingdeng.tw/og-image.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "AI 健診中心",
+  "description": "免費評估企業 AI 就緒度，取得 AI 成熟度評分、客製化導入建議與投資報酬預估。",
+  "url": "https://xingdeng.tw/ai-checkup.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "光耀星樞 SNT",
+    "url": "https://xingdeng.tw",
+    "email": "service@xingdeng.tw"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "TWD",
+    "description": "免費 AI 健診評估"
+  }
+}
+</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{snt:{400:'#2dd4bf',500:'#14b8a6',600:'#0d9488',gold:'#fbbf24',cyan:'#06b6d4',purple:'#a855f7'},cyberDark:'#070a12',cyberPanel:'#0f172a',cyberCard:'#1e293b'},fontFamily:{sans:['Inter','Noto Sans TC','sans-serif'],mono:['Fira Code','monospace']}}}}</script>
+<style>
+body{font-family:'Inter','Noto Sans TC',sans-serif}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:#070a12}
+::-webkit-scrollbar-thumb{background:#334155;border-radius:3px}
+.radio-card input:checked+label{border-color:#14b8a6;background:rgba(20,184,166,0.08)}
+.checkbox-card input:checked+label{border-color:#14b8a6;background:rgba(20,184,166,0.08)}
+.score-ring{transition:stroke-dashoffset 1s ease}
+@keyframes countUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.count-anim{animation:countUp .6s ease forwards}
+</style>
+</head>
+<body class="bg-cyberDark text-slate-100 min-h-screen antialiased">
+
+<!-- NAV -->
+<header class="border-b border-slate-800 bg-slate-950/90 backdrop-blur sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-4 lg:px-8 py-3 flex items-center justify-between">
+<a href="/" class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-snt-600 via-cyan-500 to-amber-400 p-0.5 flex items-center justify-center shadow-lg shadow-snt-500/20">
+<div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center font-black text-amber-400 font-mono text-sm">SNT</div>
+</div>
+<span class="font-bold text-sm md:text-base text-white hidden sm:inline">光耀星樞</span>
+</a>
+<nav class="hidden lg:flex items-center gap-1 text-xs font-medium">
+<a href="/" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition">首頁</a>
+<a href="/services.html" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition">服務</a>
+<a href="/#ai-cloud" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition">AI雲端辦公室</a>
+<a href="/pricing.html" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition">定價</a>
+<a href="/exhibition.html" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition">案例</a>
+<a href="/#faq" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition">FAQ</a>
+<a href="/pricing.html#contact" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition">預約</a>
+<a href="/pricing.html#contact" class="ml-2 px-4 py-2 rounded-lg bg-gradient-to-r from-snt-600 to-cyan-600 hover:from-snt-500 hover:to-cyan-500 text-white transition">聯絡</a>
+</nav>
+<button id="mobile-toggle" class="lg:hidden w-9 h-9 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300">
+<i class="fa-solid fa-bars text-sm"></i>
+</button>
+</div>
+<div id="mobile-menu" class="hidden lg:hidden border-t border-slate-800 bg-slate-950 px-4 py-3 space-y-1 text-sm">
+<a href="/" class="block px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800">首頁</a>
+<a href="/services.html" class="block px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800">服務</a>
+<a href="/#ai-cloud" class="block px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800">AI雲端辦公室</a>
+<a href="/pricing.html" class="block px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800">定價</a>
+<a href="/exhibition.html" class="block px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800">案例</a>
+<a href="/#faq" class="block px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800">FAQ</a>
+<a href="/pricing.html#contact" class="block px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800">預約</a>
+<a href="/pricing.html#contact" class="block px-3 py-2 rounded-lg bg-gradient-to-r from-snt-600 to-cyan-600 text-white text-center mt-2">聯絡</a>
+</div>
+</header>
+
+<!-- HERO -->
+<section class="relative overflow-hidden py-16 md:py-24">
+<div class="absolute inset-0 bg-gradient-to-b from-cyan-900/10 via-transparent to-transparent"></div>
+<div class="absolute top-1/4 left-1/3 w-96 h-96 bg-snt-500/5 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-1/4 right-1/3 w-96 h-96 bg-cyan-500/5 rounded-full blur-[120px]"></div>
+<div class="relative z-10 max-w-4xl mx-auto px-6 text-center space-y-6">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-snt-500/10 border border-snt-500/30 text-snt-400 text-xs font-mono">
+<i class="fa-solid fa-heart-pulse"></i> AI HEALTH CHECK CENTER · 免費健診
+</div>
+<h2 class="text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight">
+AI 健診中心
+</h2>
+<p class="text-lg md:text-xl text-slate-300 font-medium">免費評估你的企業 AI 就緒度</p>
+<p class="text-slate-400 text-sm max-w-2xl mx-auto leading-relaxed">回答 6 個簡單問題，立即取得你的企業 AI 成熟度評分、客製化導入建議與投資報酬預估。已有 <span class="text-snt-400 font-bold">127</span> 家企業完成健診。</p>
+<div class="flex items-center justify-center gap-2 text-xs text-slate-500 font-mono pt-2">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> 平均完成時間：2 分鐘
+</div>
+</div>
+</section>
+
+<!-- TRUST COUNTER -->
+<section class="max-w-3xl mx-auto px-6 pb-8">
+<div class="grid grid-cols-3 gap-4 text-center">
+<div class="bg-cyberPanel border border-slate-800 rounded-xl p-4">
+<div class="text-2xl md:text-3xl font-black text-snt-400 font-mono count-anim" id="counter-companies">127</div>
+<div class="text-[10px] text-slate-500 mt-1">企業完成健診</div>
+</div>
+<div class="bg-cyberPanel border border-slate-800 rounded-xl p-4">
+<div class="text-2xl md:text-3xl font-black text-cyan-400 font-mono count-anim">96%</div>
+<div class="text-[10px] text-slate-500 mt-1">客戶滿意度</div>
+</div>
+<div class="bg-cyberPanel border border-slate-800 rounded-xl p-4">
+<div class="text-2xl md:text-3xl font-black text-amber-400 font-mono count-anim">3.2x</div>
+<div class="text-[10px] text-slate-500 mt-1">平均 ROI 倍數</div>
+</div>
+</div>
+</section>
+
+<!-- ASSESSMENT FORM -->
+<section class="max-w-2xl mx-auto px-6 pb-12" id="checkup-form">
+<form id="checkupForm" class="bg-cyberPanel border border-slate-800 rounded-2xl p-6 md:p-8 space-y-6" novalidate>
+
+<div>
+<label class="text-sm font-semibold text-white mb-2 block"><i class="fa-solid fa-building mr-1 text-snt-400"></i> 公司名稱 <span class="text-rose-400">*</span></label>
+<input type="text" name="company" required placeholder="請輸入公司或品牌名稱" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:border-snt-500 focus:outline-none transition">
+<div class="err-msg hidden text-rose-400 text-xs mt-1">請填寫公司名稱</div>
+</div>
+
+<div>
+<label class="text-sm font-semibold text-white mb-2 block"><i class="fa-solid fa-industry mr-1 text-cyan-400"></i> 產業類別</label>
+<select name="industry" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white focus:border-snt-500 focus:outline-none transition">
+<option value="">請選擇產業</option>
+<option value="餐飲">餐飲</option>
+<option value="零售">零售</option>
+<option value="服務">服務</option>
+<option value="教育">教育</option>
+<option value="醫美">醫美</option>
+<option value="房仲">房仲</option>
+<option value="命理">命理</option>
+<option value="科技">科技</option>
+<option value="其他">其他</option>
+</select>
+</div>
+
+<div>
+<label class="text-sm font-semibold text-white mb-2 block"><i class="fa-solid fa-users mr-1 text-purple-400"></i> 員工人數</label>
+<select name="employees" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white focus:border-snt-500 focus:outline-none transition">
+<option value="">請選擇員工人數</option>
+<option value="1-10">1-10 人</option>
+<option value="11-50">11-50 人</option>
+<option value="51-200">51-200 人</option>
+<option value="200+">200+ 人</option>
+</select>
+</div>
+
+<div>
+<label class="text-sm font-semibold text-white mb-2 block"><i class="fa-solid fa-laptop-code mr-1 text-amber-400"></i> 目前使用哪些工具（可複選）</label>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+<div class="checkbox-card"><input type="checkbox" name="tools" value="Google Workspace" id="t1" class="hidden"><label for="t1" class="block cursor-pointer bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-xs text-slate-300 text-center hover:border-slate-600 transition">Google Workspace</label></div>
+<div class="checkbox-card"><input type="checkbox" name="tools" value="Office 365" id="t2" class="hidden"><label for="t2" class="block cursor-pointer bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-xs text-slate-300 text-center hover:border-slate-600 transition">Office 365</label></div>
+<div class="checkbox-card"><input type="checkbox" name="tools" value="CRM" id="t3" class="hidden"><label for="t3" class="block cursor-pointer bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-xs text-slate-300 text-center hover:border-slate-600 transition">CRM</label></div>
+<div class="checkbox-card"><input type="checkbox" name="tools" value="ERP" id="t4" class="hidden"><label for="t4" class="block cursor-pointer bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-xs text-slate-300 text-center hover:border-slate-600 transition">ERP</label></div>
+<div class="checkbox-card"><input type="checkbox" name="tools" value="其他" id="t5" class="hidden"><label for="t5" class="block cursor-pointer bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-xs text-slate-300 text-center hover:border-slate-600 transition">其他</label></div>
+</div>
+</div>
+
+<div>
+<label class="text-sm font-semibold text-white mb-2 block"><i class="fa-solid fa-triangle-exclamation mr-1 text-rose-400"></i> 最大的營運痛點</label>
+<div class="space-y-2">
+<div class="radio-card"><input type="radio" name="pain" value="客戶回覆太慢" id="p1" class="hidden"><label for="p1" class="block cursor-pointer bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-xs text-slate-300 hover:border-slate-600 transition"><i class="fa-solid fa-clock mr-1 text-amber-400"></i> 客戶回覆太慢</label></div>
+<div class="radio-card"><input type="radio" name="pain" value="文件管理混亂" id="p2" class="hidden"><label for="p2" class="block cursor-pointer bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-xs text-slate-300 hover:border-slate-600 transition"><i class="fa-solid fa-folder-open mr-1 text-cyan-400"></i> 文件管理混亂</label></div>
+<div class="radio-card"><input type="radio" name="pain" value="重複工作太多" id="p3" class="hidden"><label for="p3" class="block cursor-pointer bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-xs text-slate-300 hover:border-slate-600 transition"><i class="fa-solid fa-repeat mr-1 text-purple-400"></i> 重複工作太多</label></div>
+<div class="radio-card"><input type="radio" name="pain" value="行銷效率低" id="p4" class="hidden"><label for="p4" class="block cursor-pointer bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-xs text-slate-300 hover:border-slate-600 transition"><i class="fa-solid fa-chart-line mr-1 text-rose-400"></i> 行銷效率低</label></div>
+<div class="radio-card"><input type="radio" name="pain" value="其他" id="p5" class="hidden"><label for="p5" class="block cursor-pointer bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-xs text-slate-300 hover:border-slate-600 transition"><i class="fa-solid fa-ellipsis mr-1 text-slate-400"></i> 其他</label></div>
+</div>
+</div>
+
+<div>
+<label class="text-sm font-semibold text-white mb-2 block"><i class="fa-solid fa-coins mr-1 text-gold"></i> 每月願意投資 AI 的預算</label>
+<div class="grid grid-cols-2 gap-2">
+<div class="radio-card"><input type="radio" name="budget" value="5K以下" id="b1" class="hidden"><label for="b1" class="block cursor-pointer bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-xs text-slate-300 text-center hover:border-slate-600 transition">NT$ 5K 以下</label></div>
+<div class="radio-card"><input type="radio" name="budget" value="5K-15K" id="b2" class="hidden"><label for="b2" class="block cursor-pointer bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-xs text-slate-300 text-center hover:border-slate-600 transition">NT$ 5K-15K</label></div>
+<div class="radio-card"><input type="radio" name="budget" value="15K-50K" id="b3" class="hidden"><label for="b3" class="block cursor-pointer bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-xs text-slate-300 text-center hover:border-slate-600 transition">NT$ 15K-50K</label></div>
+<div class="radio-card"><input type="radio" name="budget" value="50K以上" id="b4" class="hidden"><label for="b4" class="block cursor-pointer bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-xs text-slate-300 text-center hover:border-slate-600 transition">NT$ 50K 以上</label></div>
+</div>
+</div>
+
+<div class="glow-line" style="height:1px;background:linear-gradient(90deg,transparent,rgba(6,182,212,0.3),transparent)"></div>
+
+<div class="grid md:grid-cols-2 gap-4">
+<div>
+<label class="text-sm font-semibold text-white mb-2 block"><i class="fa-solid fa-user mr-1 text-snt-400"></i> 姓名 <span class="text-rose-400">*</span></label>
+<input type="text" name="name" required placeholder="請輸入您的姓名" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:border-snt-500 focus:outline-none transition">
+<div class="err-msg hidden text-rose-400 text-xs mt-1">請填寫姓名</div>
+</div>
+<div>
+<label class="text-sm font-semibold text-white mb-2 block"><i class="fa-solid fa-phone mr-1 text-cyan-400"></i> 手機 <span class="text-rose-400">*</span></label>
+<input type="tel" name="phone" required placeholder="09xx-xxx-xxx" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:border-snt-500 focus:outline-none transition">
+<div class="err-msg hidden text-rose-400 text-xs mt-1">請填寫手機號碼</div>
+</div>
+</div>
+
+<div>
+<label class="text-sm font-semibold text-white mb-2 block"><i class="fa-solid fa-envelope mr-1 text-amber-400"></i> Email <span class="text-rose-400">*</span></label>
+<input type="email" name="email" required placeholder="your@email.com" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:border-snt-500 focus:outline-none transition">
+<div class="err-msg hidden text-rose-400 text-xs mt-1">請填寫有效的 Email</div>
+</div>
+
+<button type="submit" id="submitBtn" class="w-full bg-gradient-to-r from-snt-600 to-cyan-600 hover:from-snt-500 hover:to-cyan-500 text-white font-bold py-3.5 rounded-xl transition text-sm flex items-center justify-center gap-2">
+<i class="fa-solid fa-file-medical"></i> 免費取得 AI 健診報告
+</button>
+<p class="text-[10px] text-slate-500 text-center">送出即表示同意我們的 <a href="/privacy.html" class="text-snt-400 underline">隱私政策</a>，資料僅用於健診報告寄送</p>
+</form>
+
+<!-- SUCCESS STATE -->
+<div id="successState" class="hidden bg-cyberPanel border border-emerald-500/30 rounded-2xl p-8 md:p-10 text-center space-y-5">
+<div class="w-16 h-16 mx-auto rounded-full bg-emerald-500/20 flex items-center justify-center">
+<i class="fa-solid fa-circle-check text-emerald-400 text-3xl"></i>
+</div>
+<h3 class="text-xl md:text-2xl font-black text-white">報告已送出！請至 Email 查收</h3>
+<p class="text-sm text-slate-400">我們已收到您的健診資料，AI 健診報告將在 <span class="text-snt-400 font-semibold">5 分鐘內</span> 寄至您的信箱。</p>
+<div id="scoreDisplay" class="bg-slate-900 border border-slate-800 rounded-xl p-5 inline-block">
+<div class="text-xs text-slate-500 mb-2 font-mono">YOUR AI MATURITY SCORE</div>
+<div class="relative w-28 h-28 mx-auto">
+<svg class="w-28 h-28 -rotate-90" viewBox="0 0 120 120">
+<circle cx="60" cy="60" r="52" fill="none" stroke="#1e293b" stroke-width="8"/>
+<circle id="scoreRing" cx="60" cy="60" r="52" fill="none" stroke="#14b8a6" stroke-width="8" stroke-linecap="round" stroke-dasharray="326.73" stroke-dashoffset="326.73" class="score-ring"/>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<span id="scoreValue" class="text-3xl font-black text-white font-mono">0</span>
+</div>
+</div>
+<div id="scoreLabel" class="text-sm font-bold mt-2 text-snt-400"></div>
+</div>
+<div class="flex flex-col sm:flex-row gap-3 justify-center pt-2">
+<a href="/pricing.html" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-snt-600 to-cyan-600 hover:from-snt-500 hover:to-cyan-500 text-white text-sm font-semibold transition">查看推薦方案</a>
+<a href="/pricing.html#contact" class="px-6 py-2.5 rounded-xl bg-slate-800 border border-slate-700 hover:bg-slate-700 text-white text-sm font-semibold transition">預約顧問諮詢</a>
+</div>
+</div>
+</section>
+
+<!-- BENEFITS -->
+<section class="max-w-4xl mx-auto px-6 pb-20">
+<div class="text-center mb-8">
+<h3 class="text-xl md:text-2xl font-black text-white">完成健診，你將獲得</h3>
+<p class="text-xs text-slate-500 mt-1">三份客製化報告，完全免費</p>
+</div>
+<div class="grid md:grid-cols-3 gap-5">
+<div class="bg-cyberPanel border border-slate-800 rounded-2xl p-6 space-y-3 text-center">
+<div class="w-12 h-12 mx-auto rounded-xl bg-snt-500/15 flex items-center justify-center">
+<i class="fa-solid fa-gauge-high text-snt-400 text-xl"></i>
+</div>
+<h4 class="font-bold text-white text-sm">AI 成熟度評分</h4>
+<p class="text-xs text-slate-400 leading-relaxed">根據你的產業、工具使用、營運痛點等維度，計算出 0-100 分的 AI 就緒度分數，清楚定位目前所處階段。</p>
+</div>
+<div class="bg-cyberPanel border border-slate-800 rounded-2xl p-6 space-y-3 text-center">
+<div class="w-12 h-12 mx-auto rounded-xl bg-cyan-500/15 flex items-center justify-center">
+<i class="fa-solid fa-map-location-dot text-cyan-400 text-xl"></i>
+</div>
+<h4 class="font-bold text-white text-sm">客製化建議</h4>
+<p class="text-xs text-slate-400 leading-relaxed">依據你的產業特性與痛點，提供具體的 AI 導入路徑建議，包含推薦工具、優先順序與預期效果。</p>
+</div>
+<div class="bg-cyberPanel border border-slate-800 rounded-2xl p-6 space-y-3 text-center">
+<div class="w-12 h-12 mx-auto rounded-xl bg-amber-500/15 flex items-center justify-center">
+<i class="fa-solid fa-chart-pie text-amber-400 text-xl"></i>
+</div>
+<h4 class="font-bold text-white text-sm">投資報酬預估</h4>
+<p class="text-xs text-slate-400 leading-relaxed">根據你的預算與規模，估算 AI 導入後可節省的人力成本與提升的效率，附上 ROI 倍數預測。</p>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-slate-800 bg-slate-950">
+<div class="max-w-7xl mx-auto px-6 py-12">
+<div class="grid md:grid-cols-4 gap-8">
+<div class="space-y-3">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-snt-600 via-cyan-500 to-amber-400 p-0.5 flex items-center justify-center">
+<div class="w-full h-full bg-slate-950 rounded-[7px] flex items-center justify-center font-black text-amber-400 font-mono text-xs">SNT</div>
+</div>
+<span class="font-bold text-sm text-white">光耀星樞</span>
+</div>
+<p class="text-xs text-slate-500 leading-relaxed">Singularity Nexus Technology — 協助企業建立 AI 雲端辦公室，讓 AI 處理重複工作，讓團隊專注創造價值。</p>
+<div class="flex items-center gap-3 pt-1">
+<a href="https://line.me/R/ti/p/@559julyu" target="_blank" class="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-emerald-400 hover:border-emerald-500/30 transition"><i class="fa-brands fa-line text-sm"></i></a>
+<a href="https://facebook.com" target="_blank" class="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-blue-400 hover:border-blue-500/30 transition"><i class="fa-brands fa-facebook-f text-sm"></i></a>
+<a href="https://instagram.com" target="_blank" class="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-pink-400 hover:border-pink-500/30 transition"><i class="fa-brands fa-instagram text-sm"></i></a>
+<a href="https://linkedin.com" target="_blank" class="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-500/30 transition"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+</div>
+</div>
+<div class="space-y-3">
+<h5 class="text-xs font-bold text-white uppercase tracking-wider">服務</h5>
+<ul class="space-y-2 text-xs text-slate-400">
+<li><a href="/services.html" class="hover:text-snt-400 transition">AI 助理建置</a></li>
+<li><a href="/services.html" class="hover:text-snt-400 transition">品牌官網建置</a></li>
+<li><a href="/services.html" class="hover:text-snt-400 transition">工作流程自動化</a></li>
+<li><a href="/services.html" class="hover:text-snt-400 transition">知識管理系統</a></li>
+<li><a href="/services.html" class="hover:text-snt-400 transition">SEO / GEO 優化</a></li>
+</ul>
+</div>
+<div class="space-y-3">
+<h5 class="text-xs font-bold text-white uppercase tracking-wider">快速連結</h5>
+<ul class="space-y-2 text-xs text-slate-400">
+<li><a href="/pricing.html" class="hover:text-snt-400 transition">方案定價</a></li>
+<li><a href="/exhibition.html" class="hover:text-snt-400 transition">案例展示</a></li>
+<li><a href="/ai-checkup.html" class="hover:text-snt-400 transition">AI 健診中心</a></li>
+<li><a href="/privacy.html" class="hover:text-snt-400 transition">隱私政策</a></li>
+<li><a href="/sitemap.xml" class="hover:text-snt-400 transition">網站地圖</a></li>
+</ul>
+</div>
+<div class="space-y-3">
+<h5 class="text-xs font-bold text-white uppercase tracking-wider">聯絡方式</h5>
+<ul class="space-y-2 text-xs text-slate-400">
+<li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-snt-400"></i> <a href="mailto:service@xingdeng.tw" class="hover:text-snt-400 transition">service@xingdeng.tw</a></li>
+<li class="flex items-center gap-2"><i class="fa-brands fa-line text-emerald-400"></i> LINE：<a href="https://line.me/R/ti/p/@559julyu" target="_blank" class="hover:text-emerald-400 transition">@559julyu</a></li>
+<li class="flex items-center gap-2"><i class="fa-solid fa-globe text-cyan-400"></i> <span class="font-mono">xingdeng.tw</span></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-slate-800 mt-8 pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-[10px] text-slate-600">
+<span>&copy; 2026 光耀星樞 Singularity Nexus Technology. All rights reserved.</span>
+<span class="font-mono">Powered by SNT AI Cloud Office</span>
+</div>
+</div>
+</footer>
+
+<!-- TOAST -->
+<div id="toast" class="fixed bottom-6 right-6 bg-slate-800 border border-slate-700 text-white px-4 py-3 rounded-xl shadow-2xl flex items-center gap-3 transition-all transform translate-y-20 opacity-0 z-50 text-xs">
+<i class="fa-solid fa-circle-check text-emerald-400 text-base"></i><span id="toastMsg">操作成功</span>
+</div>
+
+<script>
+document.getElementById('mobile-toggle').addEventListener('click',function(){
+document.getElementById('mobile-menu').classList.toggle('hidden');
+});
+
+var form=document.getElementById('checkupForm');
+var successState=document.getElementById('successState');
+
+function showToast(msg){
+var t=document.getElementById('toast');
+document.getElementById('toastMsg').textContent=msg;
+t.classList.remove('translate-y-20','opacity-0');
+setTimeout(function(){t.classList.add('translate-y-20','opacity-0')},3000);
+}
+
+function calcScore(data){
+var score=0;
+var toolCount=data.tools.length;
+score+=toolCount*8;
+var empMap={'1-10':5,'11-50':12,'51-200':18,'200+':25};
+score+=empMap[data.employees]||0;
+var budgetMap={'5K以下':5,'5K-15K':12,'15K-50K':18,'50K以上':25};
+score+=budgetMap[data.budget]||0;
+var painMap={'客戶回覆太慢':10,'文件管理混亂':8,'重複工作太多':12,'行銷效率低':9,'其他':6};
+score+=painMap[data.pain]||0;
+var indMap={'餐飲':7,'零售':8,'服務':7,'教育':6,'醫美':9,'房仲':7,'命理':5,'科技':12,'其他':6};
+score+=indMap[data.industry]||0;
+if(score>100)score=100;
+return score;
+}
+
+function getScoreInfo(s){
+if(s>=80)return{label:'AI 先驅企業',color:'#14b8a6',rec:'您已具備完善的 AI 基礎，建議導入全自動化方案，最大化 ROI。'};
+if(s>=60)return{label:'AI 成長期',color:'#06b6d4',rec:'已有良好的數位基礎，建議從客製化方案開始，逐步擴展 AI 應用。'};
+if(s>=40)return{label:'AI 萌芽期',color:'#fbbf24',rec:'具備基本數位工具，建議從模板方案 + AI 客服開始，快速見效。'};
+return{label:'AI 起步期',color:'#f97316',rec:'建議先從基礎數位化開始，SNT Starter 方案是最適合的入門選擇。'};
+}
+
+function animateScore(target){
+var ring=document.getElementById('scoreRing');
+var val=document.getElementById('scoreValue');
+var circumference=326.73;
+var offset=circumference-(target/100)*circumference;
+ring.style.strokeDashoffset=offset;
+var current=0;
+var step=Math.ceil(target/30);
+var interval=setInterval(function(){
+current+=step;
+if(current>=target){current=target;clearInterval(interval)}
+val.textContent=current;
+},30);
+var info=getScoreInfo(target);
+document.getElementById('scoreLabel').textContent=info.label;
+document.getElementById('scoreLabel').style.color=info.color;
+ring.setAttribute('stroke',info.color);
+}
+
+form.addEventListener('submit',function(e){
+e.preventDefault();
+var valid=true;
+var required=form.querySelectorAll('[required]');
+required.forEach(function(input){
+var err=input.parentElement.querySelector('.err-msg');
+if(!input.value.trim()){
+valid=false;
+input.classList.add('border-rose-500');
+if(err)err.classList.remove('hidden');
+}else{
+input.classList.remove('border-rose-500');
+if(err)err.classList.add('hidden');
+}
+});
+var emailInput=form.querySelector('input[name="email"]');
+if(emailInput.value&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)){
+valid=false;
+emailInput.classList.add('border-rose-500');
+var err=emailInput.parentElement.querySelector('.err-msg');
+if(err)err.classList.remove('hidden');
+}
+if(!valid)return;
+var tools=[];
+form.querySelectorAll('input[name="tools"]:checked').forEach(function(cb){tools.push(cb.value)});
+var data={
+company:form.company.value,
+industry:form.industry.value,
+employees:form.employees.value,
+tools:tools,
+pain:form.pain.value,
+budget:form.budget.value,
+name:form.name.value,
+email:form.email.value,
+phone:form.phone.value
+};
+var score=calcScore(data);
+form.classList.add('hidden');
+successState.classList.remove('hidden');
+setTimeout(function(){animateScore(score)},300);
+showToast('健診報告已寄出！');
+});
+</script>
+
+</body></html>

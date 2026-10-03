@@ -1,0 +1,234 @@
+<!DOCTYPE html><html lang="zh-TW" class="dark">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>知識中心 | 光耀星樞 SNT — AI 知識庫與教學文章</title>
+<meta name="description" content="光耀星樞知識中心：AI 自動化教學文章、企業導入指南、應用案例與趨勢分析，幫助您快速掌握 AI 知識。">
+<link rel="canonical" href="https://xingdeng.tw/knowledge.html">
+<meta property="og:title" content="知識中心 | 光耀星樞 SNT — AI 知識庫與教學文章">
+<meta property="og:description" content="學習 AI，從這裡開始。涵蓋入門教學、企業應用、行銷實戰與產業趨勢。">
+<meta property="og:url" content="https://xingdeng.tw/knowledge.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:site_name" content="光耀星樞 SNT">
+<meta name="robots" content="index, follow">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{snt:{400:'#2dd4bf',500:'#14b8a6',600:'#0d9488',gold:'#fbbf24',cyan:'#06b6d4',purple:'#a855f7'},cyberDark:'#070a12',cyberPanel:'#0f172a',cyberCard:'#1e293b'},fontFamily:{sans:['Inter','Noto Sans TC','sans-serif'],mono:['Fira Code','monospace']}}}}</script>
+<style>body{font-family:'Inter','Noto Sans TC',sans-serif}::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#070a12}::-webkit-scrollbar-thumb{background:#334155;border-radius:3px}</style>
+</head>
+<body class="bg-cyberDark text-slate-100 min-h-screen antialiased">
+
+<nav class="border-b border-slate-800 bg-slate-950/90 backdrop-blur sticky top-0 z-50">
+<div class="max-w-6xl mx-auto px-4 lg:px-8 py-3 flex items-center justify-between">
+<a href="/" class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-snt-600 via-cyan-500 to-amber-400 p-0.5 flex items-center justify-center">
+<div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center font-black text-amber-400 font-mono text-sm">SNT</div>
+</div>
+<span class="font-bold text-sm text-white">光耀星樞</span>
+</a>
+<div class="hidden lg:flex items-center gap-1 text-xs">
+<a href="/" class="px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition">首頁</a>
+<a href="/services.html" class="px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition">服務</a>
+<a href="/ai-office.html" class="px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition">AI雲端辦公室</a>
+<a href="/pricing.html" class="px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition">定價</a>
+<a href="/cases.html" class="px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition">案例</a>
+<a href="/faq.html" class="px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition">FAQ</a>
+<a href="/booking.html" class="px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition">預約</a>
+<a href="/contact.html" class="px-3 py-2 rounded-lg bg-snt-600 hover:bg-snt-500 text-white font-medium transition">聯絡</a>
+</div>
+<button id="mobileMenuBtn" class="lg:hidden text-slate-400 hover:text-white text-xl"><i class="fa-solid fa-bars"></i></button>
+</div>
+<div id="mobileMenu" class="hidden lg:hidden border-t border-slate-800 bg-slate-950 px-4 pb-4 space-y-1 text-sm">
+<a href="/" class="block px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">首頁</a>
+<a href="/services.html" class="block px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">服務</a>
+<a href="/ai-office.html" class="block px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">AI雲端辦公室</a>
+<a href="/pricing.html" class="block px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">定價</a>
+<a href="/cases.html" class="block px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">案例</a>
+<a href="/faq.html" class="block px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">FAQ</a>
+<a href="/booking.html" class="block px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">預約</a>
+<a href="/contact.html" class="block px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">聯絡</a>
+</div>
+</nav>
+<script>document.getElementById('mobileMenuBtn').addEventListener('click',function(){document.getElementById('mobileMenu').classList.toggle('hidden')})</script>
+
+<section class="py-16 md:py-20 text-center space-y-6 px-6 relative overflow-hidden">
+<div class="absolute inset-0 cyber-grid opacity-30 pointer-events-none"></div>
+<div class="absolute -right-20 top-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -left-20 bottom-10 w-72 h-72 bg-snt-500/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative z-10 space-y-6">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-400 text-xs font-mono">
+<i class="fa-solid fa-graduation-cap"></i> 知識庫 · 持續更新
+</div>
+<h1 class="text-3xl md:text-5xl font-black text-white">知識中心</h1>
+<p class="text-slate-400 text-sm md:text-base max-w-xl mx-auto">學習 AI，從這裡開始</p>
+</div>
+</section>
+
+<section class="max-w-6xl mx-auto px-6 pb-20">
+<div class="flex flex-col lg:flex-row gap-8">
+
+<div class="flex-1">
+<div class="grid md:grid-cols-2 gap-5">
+
+<div class="group bg-cyberPanel border border-slate-800 rounded-2xl p-6 space-y-4 hover:border-cyan-500/40 transition">
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-[10px] font-mono font-semibold">入門</span>
+<span class="text-[10px] text-slate-500 font-mono"><i class="fa-regular fa-clock mr-1"></i>5 分鐘</span>
+</div>
+<h3 class="font-bold text-white text-base leading-snug">什麼是 AI 自動化？5 分鐘搞懂</h3>
+<p class="text-xs text-slate-400 leading-relaxed">從基礎概念到實際應用，用最簡單的方式理解 AI 自動化如何改變企業運作模式，以及它能為您帶來什麼具體效益。</p>
+<a href="#" class="inline-flex items-center gap-1.5 text-xs font-medium text-cyan-400 hover:text-cyan-500 transition">
+閱讀全文 <i class="fa-solid fa-arrow-right text-[10px]"></i>
+</a>
+</div>
+
+<div class="group bg-cyberPanel border border-slate-800 rounded-2xl p-6 space-y-4 hover:border-amber-500/40 transition">
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-400 text-[10px] font-mono font-semibold">觀念</span>
+<span class="text-[10px] text-slate-500 font-mono"><i class="fa-regular fa-clock mr-1"></i>8 分鐘</span>
+</div>
+<h3 class="font-bold text-white text-base leading-snug">企業導入 AI 的 5 個常見誤區</h3>
+<p class="text-xs text-slate-400 leading-relaxed">「AI 會取代所有人」「導入 AI 很貴」— 這些觀念可能讓您錯過最佳導入時機。破解迷思，做出正確決策。</p>
+<a href="#" class="inline-flex items-center gap-1.5 text-xs font-medium text-amber-400 hover:text-amber-500 transition">
+閱讀全文 <i class="fa-solid fa-arrow-right text-[10px]"></i>
+</a>
+</div>
+
+<div class="group bg-cyberPanel border border-slate-800 rounded-2xl p-6 space-y-4 hover:border-snt-500/40 transition">
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-1 rounded-full bg-snt-500/10 text-snt-400 text-[10px] font-mono font-semibold">應用</span>
+<span class="text-[10px] text-slate-500 font-mono"><i class="fa-regular fa-clock mr-1"></i>10 分鐘</span>
+</div>
+<h3 class="font-bold text-white text-base leading-snug">如何用 AI 提升客服效率</h3>
+<p class="text-xs text-slate-400 leading-relaxed">實戰分享：如何利用 AI 客服機器人處理 80% 的常見問題，讓人工客服專注處理高價值客戶，提升滿意度與留存率。</p>
+<a href="#" class="inline-flex items-center gap-1.5 text-xs font-medium text-snt-400 hover:text-snt-500 transition">
+閱讀全文 <i class="fa-solid fa-arrow-right text-[10px]"></i>
+</a>
+</div>
+
+<div class="group bg-cyberPanel border border-slate-800 rounded-2xl p-6 space-y-4 hover:border-purple-500/40 transition">
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-1 rounded-full bg-purple-500/10 text-purple-400 text-[10px] font-mono font-semibold">行銷</span>
+<span class="text-[10px] text-slate-500 font-mono"><i class="fa-regular fa-clock mr-1"></i>12 分鐘</span>
+</div>
+<h3 class="font-bold text-white text-base leading-snug">AI 內容行銷實戰指南</h3>
+<p class="text-xs text-slate-400 leading-relaxed">從內容規劃、文案生成到社群排程，了解 AI 如何幫助行銷團隊以 1/3 的時間產出 3 倍的高品質內容。</p>
+<a href="#" class="inline-flex items-center gap-1.5 text-xs font-medium text-purple-400 hover:text-purple-500 transition">
+閱讀全文 <i class="fa-solid fa-arrow-right text-[10px]"></i>
+</a>
+</div>
+
+<div class="group bg-cyberPanel border border-slate-800 rounded-2xl p-6 space-y-4 hover:border-rose-500/40 transition">
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-1 rounded-full bg-rose-500/10 text-rose-400 text-[10px] font-mono font-semibold">採購</span>
+<span class="text-[10px] text-slate-500 font-mono"><i class="fa-regular fa-clock mr-1"></i>7 分鐘</span>
+</div>
+<h3 class="font-bold text-white text-base leading-snug">選擇 AI 方案的 3 個關鍵</h3>
+<p class="text-xs text-slate-400 leading-relaxed">市面 AI 方案琳瑯滿目，如何選擇最適合企業的解決方案？掌握預算、功能、擴展性三大評估維度。</p>
+<a href="#" class="inline-flex items-center gap-1.5 text-xs font-medium text-rose-400 hover:text-rose-500 transition">
+閱讀全文 <i class="fa-solid fa-arrow-right text-[10px]"></i>
+</a>
+</div>
+
+<div class="group bg-cyberPanel border border-slate-800 rounded-2xl p-6 space-y-4 hover:border-emerald-500/40 transition">
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-[10px] font-mono font-semibold">趨勢</span>
+<span class="text-[10px] text-slate-500 font-mono"><i class="fa-regular fa-clock mr-1"></i>9 分鐘</span>
+</div>
+<h3 class="font-bold text-white text-base leading-snug">AI 時代的工作方式變革</h3>
+<p class="text-xs text-slate-400 leading-relaxed">AI 不會取代你，但會用 AI 的人會。探索未來工作模式的變化，以及如何讓自己成為 AI 時代的不可替代人才。</p>
+<a href="#" class="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-400 hover:text-emerald-500 transition">
+閱讀全文 <i class="fa-solid fa-arrow-right text-[10px]"></i>
+</a>
+</div>
+
+</div>
+</div>
+
+<aside class="lg:w-72 space-y-5 flex-shrink-0">
+<div class="bg-cyberPanel border border-slate-800 rounded-2xl p-5 space-y-3">
+<h3 class="font-semibold text-white text-sm flex items-center gap-2"><i class="fa-solid fa-magnifying-glass text-snt-400"></i>搜尋文章</h3>
+<div class="relative">
+<input type="text" placeholder="輸入關鍵字..." class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white focus:border-snt-500 focus:outline-none placeholder:text-slate-600">
+<i class="fa-solid fa-magnifying-glass absolute right-3 top-1/2 -translate-y-1/2 text-slate-600 text-xs"></i>
+</div>
+</div>
+
+<div class="bg-cyberPanel border border-slate-800 rounded-2xl p-5 space-y-3">
+<h3 class="font-semibold text-white text-sm flex items-center gap-2"><i class="fa-solid fa-filter text-cyan-400"></i>分類篩選</h3>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1.5 rounded-full bg-snt-500/10 border border-snt-500/30 text-snt-400 text-[10px] font-mono font-semibold">全部</button>
+<button class="px-3 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-slate-400 text-[10px] font-mono hover:text-white hover:border-slate-600 transition">入門</button>
+<button class="px-3 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-slate-400 text-[10px] font-mono hover:text-white hover:border-slate-600 transition">觀念</button>
+<button class="px-3 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-slate-400 text-[10px] font-mono hover:text-white hover:border-slate-600 transition">應用</button>
+<button class="px-3 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-slate-400 text-[10px] font-mono hover:text-white hover:border-slate-600 transition">行銷</button>
+<button class="px-3 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-slate-400 text-[10px] font-mono hover:text-white hover:border-slate-600 transition">採購</button>
+<button class="px-3 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-slate-400 text-[10px] font-mono hover:text-white hover:border-slate-600 transition">趨勢</button>
+</div>
+</div>
+
+<div class="bg-gradient-to-br from-cyberPanel via-slate-900 to-slate-950 border border-slate-800 rounded-2xl p-5 space-y-3">
+<div class="w-10 h-10 rounded-xl bg-snt-500/10 flex items-center justify-center">
+<i class="fa-solid fa-lightbulb text-snt-400"></i>
+</div>
+<h3 class="font-bold text-white text-sm">需要客製化建議？</h3>
+<p class="text-xs text-slate-400">每個企業的需求不同，讓我們的 AI 顧問為您量身規劃。</p>
+<a href="/booking.html" class="block text-center bg-gradient-to-r from-snt-600 to-cyan-600 hover:from-snt-500 hover:to-cyan-500 text-white font-semibold py-2.5 rounded-xl transition text-xs">
+<i class="fa-solid fa-calendar-check mr-1"></i> 預約顧問
+</a>
+</div>
+</aside>
+
+</div>
+</section>
+
+<footer class="border-t border-slate-800 bg-slate-950 mt-12">
+<div class="max-w-6xl mx-auto px-6 py-10">
+<div class="grid md:grid-cols-4 gap-8 text-sm">
+<div class="space-y-3">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-snt-600 via-cyan-500 to-amber-400 p-0.5 flex items-center justify-center">
+<div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center font-black text-amber-400 font-mono text-xs">SNT</div>
+</div>
+<span class="font-bold text-white text-sm">光耀星樞</span>
+</div>
+<p class="text-xs text-slate-500">Singularity Nexus Technology<br>企業 AI 自動化解決方案</p>
+</div>
+<div class="space-y-2">
+<h4 class="font-semibold text-white text-xs uppercase tracking-wider">快速連結</h4>
+<a href="/services.html" class="block text-xs text-slate-400 hover:text-snt-400 transition">服務項目</a>
+<a href="/pricing.html" class="block text-xs text-slate-400 hover:text-snt-400 transition">方案定價</a>
+<a href="/cases.html" class="block text-xs text-slate-400 hover:text-snt-400 transition">成功案例</a>
+<a href="/faq.html" class="block text-xs text-slate-400 hover:text-snt-400 transition">常見問題</a>
+</div>
+<div class="space-y-2">
+<h4 class="font-semibold text-white text-xs uppercase tracking-wider">法律資訊</h4>
+<a href="/privacy.html" class="block text-xs text-slate-400 hover:text-snt-400 transition">法律免責聲明</a>
+<a href="/personal-data.html" class="block text-xs text-slate-400 hover:text-snt-400 transition">個人資料保護</a>
+<a href="/cookies.html" class="block text-xs text-slate-400 hover:text-snt-400 transition">Cookie 政策</a>
+</div>
+<div class="space-y-2">
+<h4 class="font-semibold text-white text-xs uppercase tracking-wider">聯繫我們</h4>
+<div class="text-xs text-slate-400 space-y-1">
+<div><i class="fa-solid fa-envelope text-snt-400 mr-1"></i><a href="mailto:service@xingdeng.tw" class="hover:text-snt-400 transition">service@xingdeng.tw</a></div>
+<div><i class="fa-brands fa-line text-emerald-400 mr-1"></i>LINE @559julyu</div>
+<div class="flex items-center gap-3 pt-2">
+<a href="#" class="text-slate-500 hover:text-snt-400 transition"><i class="fa-brands fa-facebook"></i></a>
+<a href="#" class="text-slate-500 hover:text-snt-400 transition"><i class="fa-brands fa-instagram"></i></a>
+<a href="#" class="text-slate-500 hover:text-snt-400 transition"><i class="fa-brands fa-linkedin"></i></a>
+<a href="#" class="text-slate-500 hover:text-snt-400 transition"><i class="fa-brands fa-github"></i></a>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-slate-800 mt-8 pt-6 flex flex-wrap items-center justify-between gap-4 text-xs text-slate-500 font-mono">
+<div>© 2026 光耀星樞 SNT · All Rights Reserved</div>
+<div><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> xingdeng.tw</div>
+</div>
+</div>
+</footer>
+
+</body></html>

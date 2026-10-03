@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>推薦獎勵計畫 | 光耀星樞 SNT</title>
+<meta name="description" content="推薦好友使用光耀星樞 SNT AI 雲端辦公室服務，雙方各得 NT$2,000 折扣，推薦次數無上限。">
+<link rel="canonical" href="https://xingdeng.tw/referral.html">
+<meta property="og:title" content="推薦獎勵計畫 | 光耀星樞 SNT">
+<meta property="og:description" content="推薦好友，雙方都有獎 — 各得 NT$2,000 折扣，推薦次數無上限。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://xingdeng.tw/referral.html">
+<meta property="og:image" content="https://xingdeng.tw/og-image.jpg">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+TC:wght@300;400;500;700;900&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        bg: '#070a12',
+        panel: '#0f172a',
+        cyan: '#00e5c8',
+        gold: '#fbbf24',
+      },
+      fontFamily: {
+        sans: ['Inter', 'Noto Sans TC', 'sans-serif'],
+        tc: ['Noto Sans TC', 'sans-serif'],
+        code: ['Fira Code', 'monospace'],
+      }
+    }
+  }
+}
+</script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #070a12; color: #e2e8f0; font-family: 'Noto Sans TC', 'Inter', sans-serif; }
+.glow-cyan { text-shadow: 0 0 20px rgba(0,229,200,0.5); }
+.glow-gold { text-shadow: 0 0 20px rgba(251,191,36,0.5); }
+.card-glow { box-shadow: 0 0 30px rgba(0,229,200,0.08); }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.fade-in-up { animation: fadeInUp 0.6s ease forwards; }
+.nav-link { position: relative; }
+.nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #00e5c8; transition: width 0.3s; }
+.nav-link:hover::after { width: 100%; }
+.hero-grid { background-image: radial-gradient(circle at 1px 1px, rgba(0,229,200,0.08) 1px, transparent 0); background-size: 40px 40px; }
+.step-line { position: absolute; top: 28px; left: 50%; width: calc(100% - 56px); height: 2px; background: linear-gradient(90deg, #00e5c8, #1e293b); }
+@keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 15px rgba(0,229,200,0.3); } 50% { box-shadow: 0 0 30px rgba(0,229,200,0.6); } }
+.pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+@keyframes codeReveal { from { opacity: 0; letter-spacing: 8px; } to { opacity: 1; letter-spacing: 2px; } }
+.code-reveal { animation: codeReveal 0.5s ease forwards; }
+</style>
+</head>
+<body class="min-h-screen">
+
+<nav class="fixed top-0 w-full z-50 bg-bg/90 backdrop-blur-xl border-b border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="/" class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan to-gold flex items-center justify-center">
+          <span class="text-bg font-bold text-sm">S</span>
+        </div>
+        <span class="font-bold text-lg text-white font-tc">光耀星樞</span>
+      </a>
+      <div class="hidden lg:flex items-center gap-6">
+        <a href="/" class="nav-link text-sm text-gray-300 hover:text-cyan transition font-tc">首頁</a>
+        <a href="/services.html" class="nav-link text-sm text-gray-300 hover:text-cyan transition font-tc">服務</a>
+        <a href="/ai-office.html" class="nav-link text-sm text-gray-300 hover:text-cyan transition font-tc">AI雲端辦公室</a>
+        <a href="/pricing.html" class="nav-link text-sm text-gray-300 hover:text-cyan transition font-tc">定價</a>
+        <a href="/cases.html" class="nav-link text-sm text-gray-300 hover:text-cyan transition font-tc">案例</a>
+        <a href="/faq.html" class="nav-link text-sm text-gray-300 hover:text-cyan transition font-tc">FAQ</a>
+        <a href="/booking.html" class="nav-link text-sm text-gray-300 hover:text-cyan transition font-tc">預約</a>
+        <a href="/contact.html" class="px-4 py-2 bg-cyan/10 border border-cyan/30 rounded-lg text-cyan text-sm hover:bg-cyan/20 transition font-tc">聯絡</a>
+      </div>
+      <button id="mobileMenuBtn" class="lg:hidden text-gray-300 hover:text-cyan">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="hidden lg:hidden bg-panel border-t border-white/5">
+    <div class="px-4 py-4 space-y-3">
+      <a href="/" class="block text-sm text-gray-300 hover:text-cyan font-tc">首頁</a>
+      <a href="/services.html" class="block text-sm text-gray-300 hover:text-cyan font-tc">服務</a>
+      <a href="/ai-office.html" class="block text-sm text-gray-300 hover:text-cyan font-tc">AI雲端辦公室</a>
+      <a href="/pricing.html" class="block text-sm text-gray-300 hover:text-cyan font-tc">定價</a>
+      <a href="/cases.html" class="block text-sm text-gray-300 hover:text-cyan font-tc">案例</a>
+      <a href="/faq.html" class="block text-sm text-gray-300 hover:text-cyan font-tc">FAQ</a>
+      <a href="/booking.html" class="block text-sm text-gray-300 hover:text-cyan font-tc">預約</a>
+      <a href="/contact.html" class="block text-sm text-gray-300 hover:text-cyan font-tc">聯絡</a>
+    </div>
+  </div>
+</nav>
+
+<section class="pt-24 pb-8 hero-grid relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-b from-gold/5 to-transparent pointer-events-none"></div>
+  <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/10 border border-gold/20 text-gold text-sm mb-6 font-tc">
+      <i class="fas fa-gift"></i>
+      <span>推薦獎勵計畫</span>
+    </div>
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 font-tc leading-tight">
+      推薦好友，<span class="text-gold glow-gold">雙方都有獎</span>
+    </h1>
+    <p class="text-lg md:text-xl text-gray-400 font-tc">分享 AI 的力量，每成功推薦一次，雙方各得 NT$2,000 折扣</p>
+  </div>
+</section>
+
+<section class="py-16">
+  <div class="max-w-5xl mx-auto px-4">
+    <h2 class="text-2xl font-bold text-white text-center mb-12 font-tc">如何運作</h2>
+    <div class="grid md:grid-cols-3 gap-8 relative">
+      <div class="hidden md:block step-line"></div>
+
+      <div class="text-center relative">
+        <div class="w-14 h-14 rounded-full bg-cyan/10 border-2 border-cyan flex items-center justify-center mx-auto mb-4 text-cyan text-xl font-bold font-code pulse-glow">1</div>
+        <h3 class="text-lg font-bold text-white mb-2 font-tc">取得你的專屬推薦碼</h3>
+        <p class="text-sm text-gray-400 font-tc">輸入姓名與 Email，立即產生一組獨一無二的推薦碼</p>
+      </div>
+
+      <div class="text-center relative">
+        <div class="w-14 h-14 rounded-full bg-cyan/10 border-2 border-cyan flex items-center justify-center mx-auto mb-4 text-cyan text-xl font-bold font-code pulse-glow">2</div>
+        <h3 class="text-lg font-bold text-white mb-2 font-tc">分享給需要 AI 的朋友</h3>
+        <p class="text-sm text-gray-400 font-tc">將推薦碼傳給同事、朋友或合作夥伴</p>
+      </div>
+
+      <div class="text-center relative">
+        <div class="w-14 h-14 rounded-full bg-gold/10 border-2 border-gold flex items-center justify-center mx-auto mb-4 text-gold text-xl font-bold font-code pulse-glow">3</div>
+        <h3 class="text-lg font-bold text-white mb-2 font-tc">對方成交，雙方得獎</h3>
+        <p class="text-sm text-gray-400 font-tc">對方完成簽約後，雙方各得 NT$2,000 折扣</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16">
+  <div class="max-w-5xl mx-auto px-4">
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-panel rounded-2xl p-6 border border-cyan/20 card-glow text-center">
+        <div class="w-12 h-12 rounded-xl bg-cyan/10 flex items-center justify-center mx-auto mb-4">
+          <i class="fas fa-user-plus text-cyan text-xl"></i>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2 font-tc">推薦人獎勵</h3>
+        <p class="text-3xl font-black text-cyan font-code mb-1">NT$2,000</p>
+        <p class="text-sm text-gray-400 font-tc">每次成功推薦可獲得折扣</p>
+      </div>
+      <div class="bg-panel rounded-2xl p-6 border border-gold/20 card-glow text-center">
+        <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center mx-auto mb-4">
+          <i class="fas fa-user-friends text-gold text-xl"></i>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2 font-tc">被推薦人獎勵</h3>
+        <p class="text-3xl font-black text-gold font-code mb-1">NT$2,000</p>
+        <p class="text-sm text-gray-400 font-tc">首次簽約即享折扣優惠</p>
+      </div>
+      <div class="bg-panel rounded-2xl p-6 border border-white/10 card-glow text-center">
+        <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mx-auto mb-4">
+          <i class="fas fa-infinity text-white text-xl"></i>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2 font-tc">無上限推薦</h3>
+        <p class="text-3xl font-black text-white font-code mb-1">無限次</p>
+        <p class="text-sm text-gray-400 font-tc">推薦次數沒有上限</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16">
+  <div class="max-w-2xl mx-auto px-4">
+    <div class="bg-panel rounded-2xl p-6 md:p-8 border border-white/5 card-glow">
+      <h2 class="text-xl font-bold text-white mb-6 font-tc text-center flex items-center justify-center gap-2">
+        <i class="fas fa-key text-cyan"></i> 立即取得推薦碼
+      </h2>
+
+      <div id="formArea">
+        <div class="space-y-4">
+          <div>
+            <label class="block text-sm text-gray-400 mb-2 font-tc">您的姓名</label>
+            <input type="text" id="refName" placeholder="請輸入姓名"
+              class="w-full bg-bg border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan/50 transition font-tc">
+          </div>
+          <div>
+            <label class="block text-sm text-gray-400 mb-2 font-tc">Email</label>
+            <input type="email" id="refEmail" placeholder="example@email.com"
+              class="w-full bg-bg border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan/50 transition font-code">
+          </div>
+          <button id="generateBtn"
+            class="w-full py-3 bg-gradient-to-r from-cyan to-emerald-400 text-bg font-bold rounded-xl text-lg hover:shadow-lg hover:shadow-cyan/20 transition-all duration-300 font-tc">
+            <i class="fas fa-bolt mr-2"></i> 產生推薦碼
+          </button>
+        </div>
+      </div>
+
+      <div id="resultArea" class="hidden">
+        <div class="text-center">
+          <p class="text-sm text-gray-400 mb-3 font-tc">你的專屬推薦碼</p>
+          <div class="bg-bg rounded-xl p-6 border border-cyan/30 mb-4 inline-block">
+            <p id="referralCode" class="text-3xl md:text-4xl font-black text-cyan font-code code-reveal tracking-widest">SNT-XXXX</p>
+          </div>
+          <div class="flex gap-3 justify-center mb-4">
+            <button id="copyBtn"
+              class="px-6 py-2.5 bg-cyan/10 border border-cyan/30 rounded-xl text-cyan text-sm hover:bg-cyan/20 transition font-tc">
+              <i class="fas fa-copy mr-2"></i> 複製推薦碼
+            </button>
+            <button id="resetBtn"
+              class="px-6 py-2.5 bg-white/5 border border-white/10 rounded-xl text-gray-400 text-sm hover:bg-white/10 transition font-tc">
+              <i class="fas fa-redo mr-2"></i> 重新產生
+            </button>
+          </div>
+          <p id="copyMsg" class="text-sm text-cyan hidden font-tc"><i class="fas fa-check mr-1"></i> 已複製到剪貼簿！</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16">
+  <div class="max-w-3xl mx-auto px-4">
+    <h2 class="text-2xl font-bold text-white text-center mb-8 font-tc">
+      <i class="fas fa-trophy text-gold mr-2"></i> 推薦排行榜
+    </h2>
+    <div class="bg-panel rounded-2xl border border-white/5 overflow-hidden card-glow">
+      <div class="grid grid-cols-12 gap-4 px-6 py-3 bg-bg/50 border-b border-white/5 text-xs text-gray-500 font-tc">
+        <div class="col-span-1">排名</div>
+        <div class="col-span-4">推薦人</div>
+        <div class="col-span-4 text-center">成功推薦</div>
+        <div class="col-span-3 text-right">累計折扣</div>
+      </div>
+
+      <div class="grid grid-cols-12 gap-4 px-6 py-4 items-center border-b border-white/5 hover:bg-white/[0.02] transition">
+        <div class="col-span-1"><span class="text-gold font-bold font-code">1</span></div>
+        <div class="col-span-4 flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full bg-gold/10 flex items-center justify-center text-gold text-xs font-bold">K</div>
+          <span class="text-sm text-white font-tc">Kevin Lin</span>
+        </div>
+        <div class="col-span-4 text-center"><span class="text-cyan font-code font-bold">12 次</span></div>
+        <div class="col-span-3 text-right"><span class="text-gold font-code font-bold">NT$24,000</span></div>
+      </div>
+
+      <div class="grid grid-cols-12 gap-4 px-6 py-4 items-center border-b border-white/5 hover:bg-white/[0.02] transition">
+        <div class="col-span-1"><span class="text-gray-400 font-bold font-code">2</span></div>
+        <div class="col-span-4 flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full bg-cyan/10 flex items-center justify-center text-cyan text-xs font-bold">M</div>
+          <span class="text-sm text-white font-tc">May Chen</span>
+        </div>
+        <div class="col-span-4 text-center"><span class="text-cyan font-code font-bold">9 次</span></div>
+        <div class="col-span-3 text-right"><span class="text-gold font-code font-bold">NT$18,000</span></div>
+      </div>
+
+      <div class="grid grid-cols-12 gap-4 px-6 py-4 items-center border-b border-white/5 hover:bg-white/[0.02] transition">
+        <div class="col-span-1"><span class="text-gray-400 font-bold font-code">3</span></div>
+        <div class="col-span-4 flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full bg-cyan/10 flex items-center justify-center text-cyan text-xs font-bold">A</div>
+          <span class="text-sm text-white font-tc">Alan Wang</span>
+        </div>
+        <div class="col-span-4 text-center"><span class="text-cyan font-code font-bold">7 次</span></div>
+        <div class="col-span-3 text-right"><span class="text-gold font-code font-bold">NT$14,000</span></div>
+      </div>
+
+      <div class="grid grid-cols-12 gap-4 px-6 py-4 items-center border-b border-white/5 hover:bg-white/[0.02] transition">
+        <div class="col-span-1"><span class="text-gray-500 font-bold font-code">4</span></div>
+        <div class="col-span-4 flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-gray-400 text-xs font-bold">S</div>
+          <span class="text-sm text-white font-tc">Sophie Huang</span>
+        </div>
+        <div class="col-span-4 text-center"><span class="text-cyan font-code font-bold">5 次</span></div>
+        <div class="col-span-3 text-right"><span class="text-gold font-code font-bold">NT$10,000</span></div>
+      </div>
+
+      <div class="grid grid-cols-12 gap-4 px-6 py-4 items-center hover:bg-white/[0.02] transition">
+        <div class="col-span-1"><span class="text-gray-500 font-bold font-code">5</span></div>
+        <div class="col-span-4 flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-gray-400 text-xs font-bold">T</div>
+          <span class="text-sm text-white font-tc">Tom Chang</span>
+        </div>
+        <div class="col-span-4 text-center"><span class="text-cyan font-code font-bold">4 次</span></div>
+        <div class="col-span-3 text-right"><span class="text-gold font-code font-bold">NT$8,000</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16">
+  <div class="max-w-3xl mx-auto px-4">
+    <h2 class="text-xl font-bold text-white mb-6 font-tc flex items-center gap-2">
+      <i class="fas fa-file-contract text-gray-400"></i> 活動辦法
+    </h2>
+    <div class="bg-panel rounded-2xl p-6 border border-white/5 card-glow">
+      <div class="space-y-3 text-sm text-gray-400 font-tc leading-relaxed">
+        <p>1. 推薦人須為光耀星樞 SNT 現有客戶或已註冊用戶。</p>
+        <p>2. 被推薦人須為首次接觸光耀星樞 SNT 的新客戶。</p>
+        <p>3. 被推薦人完成簽約並付款後，雙方各獲得 NT$2,000 折扣券乙張。</p>
+        <p>4. 折扣券可用於下次續約或加購方案時抵扣。</p>
+        <p>5. 推薦次數無上限，但同一被推薦人僅限使用一組推薦碼。</p>
+        <p>6. 光耀星樞 SNT 保留修改活動辦法及最終解釋之權利。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-panel border-t border-white/5 py-12">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="grid md:grid-cols-4 gap-8 mb-8">
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan to-gold flex items-center justify-center">
+            <span class="text-bg font-bold text-sm">S</span>
+          </div>
+          <span class="font-bold text-lg text-white font-tc">光耀星樞 SNT</span>
+        </div>
+        <p class="text-sm text-gray-500 font-tc leading-relaxed">以 AI 驅動企業成長，提供智能雲端辦公室解決方案。</p>
+      </div>
+      <div>
+        <h4 class="text-sm font-bold text-white mb-3 font-tc">快速連結</h4>
+        <div class="space-y-2">
+          <a href="/services.html" class="block text-sm text-gray-500 hover:text-cyan transition font-tc">服務</a>
+          <a href="/pricing.html" class="block text-sm text-gray-500 hover:text-cyan transition font-tc">定價</a>
+          <a href="/cases.html" class="block text-sm text-gray-500 hover:text-cyan transition font-tc">案例</a>
+          <a href="/faq.html" class="block text-sm text-gray-500 hover:text-cyan transition font-tc">FAQ</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-sm font-bold text-white mb-3 font-tc">聯絡資訊</h4>
+        <div class="space-y-2">
+          <p class="text-sm text-gray-500 font-tc"><i class="fas fa-envelope mr-2 text-cyan"></i>service@xingdeng.tw</p>
+          <p class="text-sm text-gray-500 font-tc"><i class="fab fa-line mr-2 text-cyan"></i>LINE @559julyu</p>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-sm font-bold text-white mb-3 font-tc">追蹤我們</h4>
+        <div class="flex gap-3">
+          <a href="#" class="w-9 h-9 rounded-lg bg-bg border border-white/10 flex items-center justify-center text-gray-500 hover:text-cyan hover:border-cyan/30 transition"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="w-9 h-9 rounded-lg bg-bg border border-white/10 flex items-center justify-center text-gray-500 hover:text-cyan hover:border-cyan/30 transition"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="w-9 h-9 rounded-lg bg-bg border border-white/10 flex items-center justify-center text-gray-500 hover:text-cyan hover:border-cyan/30 transition"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="w-9 h-9 rounded-lg bg-bg border border-white/10 flex items-center justify-center text-gray-500 hover:text-cyan hover:border-cyan/30 transition"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/5 pt-6 text-center">
+      <p class="text-xs text-gray-600 font-tc">&copy; 2026 光耀星樞 SNT. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+  document.getElementById('mobileMenu').classList.toggle('hidden');
+});
+
+function generateCode() {
+  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  let code = '';
+  for (let i = 0; i < 4; i++) {
+    code += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return 'SNT-' + code;
+}
+
+document.getElementById('generateBtn').addEventListener('click', function() {
+  const name = document.getElementById('refName').value.trim();
+  const email = document.getElementById('refEmail').value.trim();
+
+  if (!name || !email) {
+    alert('請填寫姓名與 Email');
+    return;
+  }
+
+  if (!email.includes('@') || !email.includes('.')) {
+    alert('請輸入有效的 Email');
+    return;
+  }
+
+  const code = generateCode();
+  document.getElementById('referralCode').textContent = code;
+  document.getElementById('formArea').classList.add('hidden');
+  document.getElementById('resultArea').classList.remove('hidden');
+});
+
+document.getElementById('copyBtn').addEventListener('click', function() {
+  const code = document.getElementById('referralCode').textContent;
+  navigator.clipboard.writeText(code).then(function() {
+    const msg = document.getElementById('copyMsg');
+    msg.classList.remove('hidden');
+    setTimeout(function() { msg.classList.add('hidden'); }, 2000);
+  });
+});
+
+document.getElementById('resetBtn').addEventListener('click', function() {
+  document.getElementById('formArea').classList.remove('hidden');
+  document.getElementById('resultArea').classList.add('hidden');
+  document.getElementById('refName').value = '';
+  document.getElementById('refEmail').value = '';
+});
+</script>
+</body>
+</html>

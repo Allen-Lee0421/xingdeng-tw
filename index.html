@@ -2,6 +2,7 @@
 <html lang="zh-TW" class="dark">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>光耀星樞 SNT | AI 雲端辦公室建置 — 讓 AI 處理重複工作，讓團隊專注創造價值</title>
     
@@ -991,6 +992,12 @@
         <button onclick="shareTo('twitter')" class="w-11 h-11 rounded-full bg-black text-white flex items-center justify-center hover:scale-110 transition shadow-lg border border-slate-700" title="分享到 X">
             <i class="fa-brands fa-x-twitter text-lg"></i>
         </button>
+        <button onclick="shareTo('threads')" class="w-11 h-11 rounded-full bg-black text-white flex items-center justify-center hover:scale-110 transition shadow-lg border border-slate-700" title="分享到 Threads">
+            <i class="fa-brands fa-threads text-lg"></i>
+        </button>
+        <button onclick="shareTo('linkedin')" class="w-11 h-11 rounded-full bg-[#0A66C2] text-white flex items-center justify-center hover:scale-110 transition shadow-lg" title="分享到 LinkedIn">
+            <i class="fa-brands fa-linkedin-in text-lg"></i>
+        </button>
         <button onclick="copyLink()" class="w-11 h-11 rounded-full bg-slate-800 text-slate-300 flex items-center justify-center hover:scale-110 hover:bg-slate-700 transition shadow-lg border border-slate-700" title="複製連結">
             <i class="fa-solid fa-link text-sm"></i>
         </button>
@@ -1110,7 +1117,9 @@
         const urls = {
             line: `https://social-plugins.line.me/lineit/share?url=${url}`,
             facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${desc}`,
-            twitter: `https://twitter.com/intent/tweet?url=${url}&text=${title}`
+            twitter: `https://twitter.com/intent/tweet?url=${url}&text=${title}`,
+            threads: `https://threads.net/intent/post?text=${title}%20${url}`,
+            linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${url}`
         };
         if (urls[platform]) window.open(urls[platform], '_blank', 'width=600,height=400');
     }
